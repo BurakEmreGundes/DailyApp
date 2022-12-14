@@ -13,6 +13,12 @@
 		4A32D7322949B3AC0074D847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A32D7302949B3AC0074D847 /* Main.storyboard */; };
 		4A32D7342949B3AE0074D847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A32D7332949B3AE0074D847 /* Assets.xcassets */; };
 		4A32D7372949B3AE0074D847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A32D7352949B3AE0074D847 /* LaunchScreen.storyboard */; };
+		4A32D7492949CB2D0074D847 /* DailyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7482949CB2D0074D847 /* DailyListViewController.swift */; };
+		4A32D74F2949CC640074D847 /* ClassNameGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D74E2949CC640074D847 /* ClassNameGettable.swift */; };
+		4A32D7532949CFFC0074D847 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7522949CFFC0074D847 /* UITableView.swift */; };
+		4A32D75E2949D41F0074D847 /* DailyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D75C2949D41F0074D847 /* DailyListTableViewCell.swift */; };
+		4A32D75F2949D41F0074D847 /* DailyListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A32D75D2949D41F0074D847 /* DailyListTableViewCell.xib */; };
+		4A32D7612949DBCB0074D847 /* DailyChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7602949DBCB0074D847 /* DailyChallenge.swift */; };
 		E909CF21E0032F18688CDDCA /* libPods-DailyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434CD87663BEAE0151E84159 /* libPods-DailyApp.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +32,12 @@
 		4A32D7332949B3AE0074D847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A32D7362949B3AE0074D847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A32D7382949B3AE0074D847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A32D7482949CB2D0074D847 /* DailyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListViewController.swift; sourceTree = "<group>"; };
+		4A32D74E2949CC640074D847 /* ClassNameGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameGettable.swift; sourceTree = "<group>"; };
+		4A32D7522949CFFC0074D847 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		4A32D75C2949D41F0074D847 /* DailyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListTableViewCell.swift; sourceTree = "<group>"; };
+		4A32D75D2949D41F0074D847 /* DailyListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyListTableViewCell.xib; sourceTree = "<group>"; };
+		4A32D7602949DBCB0074D847 /* DailyChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallenge.swift; sourceTree = "<group>"; };
 		7C5074072D2F0A090CB2667F /* Pods-DailyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.debug.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE3CA918E1CD156FDF84116 /* Pods-DailyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.release.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,15 +75,16 @@
 		4A32D7292949B3AC0074D847 /* DailyApp */ = {
 			isa = PBXGroup;
 			children = (
+				4A32D7502949CFD20074D847 /* SharedExtensions */,
+				4A32D74C2949CC3F0074D847 /* Utilities */,
+				4A32D7412949BE020074D847 /* StoryBoards */,
 				4A32D73E2949BB820074D847 /* Model */,
 				4A32D73F2949BB900074D847 /* View */,
 				4A32D7402949BB950074D847 /* Controller */,
 				4A32D72A2949B3AC0074D847 /* AppDelegate.swift */,
 				4A32D72C2949B3AC0074D847 /* SceneDelegate.swift */,
 				4A32D72E2949B3AC0074D847 /* ViewController.swift */,
-				4A32D7302949B3AC0074D847 /* Main.storyboard */,
 				4A32D7332949B3AE0074D847 /* Assets.xcassets */,
-				4A32D7352949B3AE0074D847 /* LaunchScreen.storyboard */,
 				4A32D7382949B3AE0074D847 /* Info.plist */,
 			);
 			path = DailyApp;
@@ -80,6 +93,7 @@
 		4A32D73E2949BB820074D847 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A32D7602949DBCB0074D847 /* DailyChallenge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -87,6 +101,8 @@
 		4A32D73F2949BB900074D847 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A32D7622949E6A10074D847 /* ExtraDaily */,
+				4A32D7432949BE890074D847 /* DailyList */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -94,8 +110,82 @@
 		4A32D7402949BB950074D847 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4A32D7472949CAD70074D847 /* DailyList */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4A32D7412949BE020074D847 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D7302949B3AC0074D847 /* Main.storyboard */,
+				4A32D7352949B3AE0074D847 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		4A32D7432949BE890074D847 /* DailyList */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D7442949BE900074D847 /* DailyListTableViewCell */,
+			);
+			path = DailyList;
+			sourceTree = "<group>";
+		};
+		4A32D7442949BE900074D847 /* DailyListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D75C2949D41F0074D847 /* DailyListTableViewCell.swift */,
+				4A32D75D2949D41F0074D847 /* DailyListTableViewCell.xib */,
+			);
+			path = DailyListTableViewCell;
+			sourceTree = "<group>";
+		};
+		4A32D7472949CAD70074D847 /* DailyList */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D7482949CB2D0074D847 /* DailyListViewController.swift */,
+			);
+			path = DailyList;
+			sourceTree = "<group>";
+		};
+		4A32D74C2949CC3F0074D847 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D74D2949CC4F0074D847 /* Protocols */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4A32D74D2949CC4F0074D847 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D74E2949CC640074D847 /* ClassNameGettable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4A32D7502949CFD20074D847 /* SharedExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D7512949CFE30074D847 /* UITableView */,
+			);
+			path = SharedExtensions;
+			sourceTree = "<group>";
+		};
+		4A32D7512949CFE30074D847 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				4A32D7522949CFFC0074D847 /* UITableView.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		4A32D7622949E6A10074D847 /* ExtraDaily */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExtraDaily;
 			sourceTree = "<group>";
 		};
 		6645AF8537F8CECC34138B9F /* Frameworks */ = {
@@ -175,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A32D7372949B3AE0074D847 /* LaunchScreen.storyboard in Resources */,
+				4A32D75F2949D41F0074D847 /* DailyListTableViewCell.xib in Resources */,
 				4A32D7342949B3AE0074D847 /* Assets.xcassets in Resources */,
 				4A32D7322949B3AC0074D847 /* Main.storyboard in Resources */,
 			);
@@ -213,8 +304,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A32D72F2949B3AC0074D847 /* ViewController.swift in Sources */,
+				4A32D74F2949CC640074D847 /* ClassNameGettable.swift in Sources */,
+				4A32D75E2949D41F0074D847 /* DailyListTableViewCell.swift in Sources */,
 				4A32D72B2949B3AC0074D847 /* AppDelegate.swift in Sources */,
+				4A32D7492949CB2D0074D847 /* DailyListViewController.swift in Sources */,
+				4A32D7612949DBCB0074D847 /* DailyChallenge.swift in Sources */,
 				4A32D72D2949B3AC0074D847 /* SceneDelegate.swift in Sources */,
+				4A32D7532949CFFC0074D847 /* UITableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
