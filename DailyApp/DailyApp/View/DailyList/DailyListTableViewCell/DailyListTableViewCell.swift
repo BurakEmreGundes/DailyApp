@@ -6,6 +6,10 @@
 //
 
 import UIKit
+enum DailListCellType{
+    case dailyList
+    case extraDailyList
+}
 
 class DailyListTableViewCell: UITableViewCell, ClassNameGettable {
     
@@ -30,11 +34,17 @@ class DailyListTableViewCell: UITableViewCell, ClassNameGettable {
         // Configure the view for the selected state
     }
     
-    func configureCell(cellId : String, dailyLabel : String, isCheckout: Bool){
+    func configureCell(cellId : String, dailyLabel : String, isCheckout: Bool, type: DailListCellType = .dailyList){
+        
         self.id = cellId
         self.dailyLabel.text = dailyLabel
-        self.checkButtonImage.isHidden = !isCheckout
-        self.dailyLabel.textColor = .red
+       
+        switch type {
+        case .dailyList:
+            self.checkButtonImage.isHidden = !isCheckout
+        case .extraDailyList:
+            self.checkButtonImage.isHidden = true
+        }
     }
     
     @IBAction func tappedCheck(_ sender: Any) {
