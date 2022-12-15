@@ -43,6 +43,7 @@ class DailyListViewController: UIViewController {
     
     private func configureNavBar(){
         self.navigationItem.title = "Görev Seç"
+        self.navigationController?.configureNavigationForBase()
     }
     
     private func configureLayoutAttributes(){
@@ -50,7 +51,10 @@ class DailyListViewController: UIViewController {
     }
 
     @IBAction func selectButtonTapped(_ sender: Any) {
-        print("select button tapped")
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "extraDailyVC") as? ExtraDailyViewController else { return }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
