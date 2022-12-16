@@ -6,3 +6,24 @@
 //
 
 import Foundation
+
+
+class User:Codable {
+    var _id : String?
+
+    var JWTToken: String? {
+        get {
+            return UserDefaults.standard.string(forKey: "JWTToken")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "JWTToken")
+        }
+    }
+    
+
+    static var current: User = User()
+    private init() { }
+}
+
+
+

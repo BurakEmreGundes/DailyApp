@@ -9,8 +9,7 @@ import UIKit
 
 class DailyListViewController: UIViewController {
     
-    var dailyChallengeList : [DailyChallenge] = [DailyChallenge(id: "1234", message: "Dişini Fırçala", isChecked: true),DailyChallenge(id: "1235", message: "Yatağını Topla", isChecked: false), DailyChallenge(id: "1237", message: "Kapıyı Kapat", isChecked: true), DailyChallenge(id: "1238", message: "Yüzünü Yıka", isChecked: false), DailyChallenge(id: "1239", message: "Çamaşırları Topla", isChecked: false), DailyChallenge(id: "1240", message: "Soda İç", isChecked: false), DailyChallenge(id: "1241", message: "Camı Kapat", isChecked: true), DailyChallenge(id: "1234", message: "Ütüyü fişten çek", isChecked: false),DailyChallenge(id: "1333", message: "Dişini Fırçala", isChecked: true),DailyChallenge(id: "1334", message: "Yatağını Topla", isChecked: false), DailyChallenge(id: "1335", message: "Kapıyı Kapat", isChecked: true), DailyChallenge(id: "1336", message: "Yüzünü Yıka", isChecked: false), DailyChallenge(id: "1337", message: "Çamaşırları Topla", isChecked: false), DailyChallenge(id: "1338", message: "Soda İç", isChecked: false), DailyChallenge(id: "1339", message: "Camı Kapat", isChecked: true), DailyChallenge(id: "1310", message: "Ütüyü fişten çek", isChecked: false),DailyChallenge(id: "1444", message: "Dişini Fırçala", isChecked: true),DailyChallenge(id: "1445", message: "Yatağını Topla", isChecked: false), DailyChallenge(id: "1446", message: "Kapıyı Kapat", isChecked: true), DailyChallenge(id: "1447", message: "Yüzünü Yıka", isChecked: false), DailyChallenge(id: "1448", message: "Çamaşırları Topla", isChecked: false), DailyChallenge(id: "1449", message: "Soda İç", isChecked: false), DailyChallenge(id: "1410", message: "Camı Kapat", isChecked: true), DailyChallenge(id: "1411", message: "Ütüyü fişten çek", isChecked: false)
-    ] {
+    var dailyList : [Daily]? {
         didSet{
             tableView.reloadData()
         }
@@ -21,6 +20,7 @@ class DailyListViewController: UIViewController {
     @IBOutlet weak var finishSelectButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        getDailies()
         configure()
     }
     
@@ -28,6 +28,21 @@ class DailyListViewController: UIViewController {
         configureTableView()
         configureNavBar()
         configureLayoutAttributes()
+    }
+    
+    private func getDailies(){
+        GetDailies().execute { [weak self] response in
+            guard let strongSelf = self else {return}
+            switch response {
+                case .this(let success):
+                strongSelf.dailyList = success.data
+                case .that(let error):
+                print(error)
+            }
+        } onError: { error in
+            print(error)
+        }
+
     }
     
     
@@ -62,18 +77,21 @@ class DailyListViewController: UIViewController {
 extension DailyListViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let dailyList = dailyList else {return UITableViewCell()}
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DailyListTableViewCell", for: indexPath) as? DailyListTableViewCell else {return UITableViewCell()}
-        cell.configureCell(cellId: dailyChallengeList[indexPath.row].id, dailyLabel: dailyChallengeList[indexPath.row].message, isCheckout: dailyChallengeList[indexPath.row].isChecked)
+        cell.configureCell(cellId: dailyList[indexPath.row]._id, dailyLabel: dailyList[indexPath.row].message, isCheckout: dailyList[indexPath.row].isChecked)
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dailyChallengeList[indexPath.row].isChecked = !dailyChallengeList[indexPath.row].isChecked
+        guard let dailyList = dailyList else {return}
+       // dailyList[indexPath.row].isChecked = !dailyList[indexPath.row].isChecked
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dailyChallengeList.count
+        return dailyList?.count ?? 0
     }
     
     

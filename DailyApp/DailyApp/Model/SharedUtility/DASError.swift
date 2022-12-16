@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+
+struct DASError: Codable{
+    let success: Bool
+    let error: String
+}
