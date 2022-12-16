@@ -20,6 +20,15 @@ class User:Codable {
         }
     }
     
+    var userId : String? {
+        get {
+            return UserDefaults.standard.string(forKey: "userId")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userId")
+        }
+    }
+    
 
     static var current: User = User()
     private init() { }

@@ -53,4 +53,25 @@ struct GetDailies : CodableReturningRequest, ErrorLoggableRequest{
 }
 
 
+struct CreateUserDaily : CodableReturningRequest, ErrorLoggableRequest{
+    typealias ResponseType = Either<UserDailyResponse, DASError>
+    
+    var userDailyRequest : UserDailyRequest
+    
+    var data: RequestData {
+    let path = NetworkingConstants.PASURL + "api/v1/userDailies"
+        return RequestData(path: path, method: .post, params: userDailyRequest.asDictionary(), headers: NetworkingConstants.authHeader)
+    }
+}
+
+struct RegisterUser : CodableReturningRequest, ErrorLoggableRequest{
+    typealias ResponseType = Either<UserResponse, DASError>
+    
+    var data: RequestData {
+    let path = NetworkingConstants.PASURL + "api/v1/auth/register"
+    return RequestData(path: path, method: .post, params: nil, headers: NetworkingConstants.authHeader)
+    }
+}
+
+
 
