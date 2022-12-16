@@ -10,7 +10,7 @@ import UIKit
 class ExtraDailyViewController: UIViewController {
 
     
-    var extraDailyList : [DailyChallenge] = []{
+    var extraDailyList : [Daily] = []{
         didSet{
             tableView.reloadData()
         }
@@ -59,7 +59,7 @@ class ExtraDailyViewController: UIViewController {
             return
         }
         
-        extraDailyList.append(DailyChallenge(id: "21421", message: message, isChecked: false))
+        //extraDailyList.append(Daily(id: "21421", message: message, isChecked: false))
         
     }
     
@@ -88,7 +88,7 @@ class ExtraDailyViewController: UIViewController {
 extension ExtraDailyViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DailyListTableViewCell", for: indexPath) as? DailyListTableViewCell else {return UITableViewCell()}
-        cell.configureCell(cellId: extraDailyList[indexPath.row].id, dailyLabel: extraDailyList[indexPath.row].message , isCheckout: extraDailyList[indexPath.row].isChecked, type: .extraDailyList)
+        cell.configureCell(cellId: extraDailyList[indexPath.row]._id, dailyLabel: extraDailyList[indexPath.row].message , isCheckout: extraDailyList[indexPath.row].isChecked, type: .extraDailyList)
         cell.selectionStyle = .none
         return cell
     }
