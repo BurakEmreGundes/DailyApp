@@ -33,6 +33,7 @@
 		4A7C4307294C89C2005FD411 /* DASError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4306294C89C2005FD411 /* DASError.swift */; };
 		4A7C4309294C89CB005FD411 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4308294C89CB005FD411 /* Either.swift */; };
 		4A7C430C294C8AF5005FD411 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C430B294C8AF5005FD411 /* User.swift */; };
+		4A7C430E294CE18E005FD411 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C430D294CE18E005FD411 /* UserResponse.swift */; };
 		E909CF21E0032F18688CDDCA /* libPods-DailyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434CD87663BEAE0151E84159 /* libPods-DailyApp.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		4A7C4306294C89C2005FD411 /* DASError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DASError.swift; sourceTree = "<group>"; };
 		4A7C4308294C89CB005FD411 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		4A7C430B294C8AF5005FD411 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4A7C430D294CE18E005FD411 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		7C5074072D2F0A090CB2667F /* Pods-DailyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.debug.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE3CA918E1CD156FDF84116 /* Pods-DailyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.release.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				4A7C430B294C8AF5005FD411 /* User.swift */,
+				4A7C430D294CE18E005FD411 /* UserResponse.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */,
 				4A32D7532949CFFC0074D847 /* UITableView.swift in Sources */,
 				4A7C430C294C8AF5005FD411 /* User.swift in Sources */,
+				4A7C430E294CE18E005FD411 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
