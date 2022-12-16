@@ -34,6 +34,9 @@
 		4A7C4309294C89CB005FD411 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4308294C89CB005FD411 /* Either.swift */; };
 		4A7C430C294C8AF5005FD411 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C430B294C8AF5005FD411 /* User.swift */; };
 		4A7C430E294CE18E005FD411 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C430D294CE18E005FD411 /* UserResponse.swift */; };
+		4A7C4311294D0734005FD411 /* UserDailyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4310294D0734005FD411 /* UserDailyRequest.swift */; };
+		4A7C4313294D1B82005FD411 /* UserDailyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */; };
+		4A7C4316294D1CE3005FD411 /* UserCustomDailyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */; };
 		E909CF21E0032F18688CDDCA /* libPods-DailyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434CD87663BEAE0151E84159 /* libPods-DailyApp.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,9 @@
 		4A7C4308294C89CB005FD411 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		4A7C430B294C8AF5005FD411 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A7C430D294CE18E005FD411 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		4A7C4310294D0734005FD411 /* UserDailyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDailyRequest.swift; sourceTree = "<group>"; };
+		4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDailyResponse.swift; sourceTree = "<group>"; };
+		4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomDailyManager.swift; sourceTree = "<group>"; };
 		7C5074072D2F0A090CB2667F /* Pods-DailyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.debug.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE3CA918E1CD156FDF84116 /* Pods-DailyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.release.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +130,7 @@
 		4A32D73E2949BB820074D847 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A7C430F294D0719005FD411 /* UserDaily */,
 				4A7C430A294C8AE6005FD411 /* User */,
 				4A7C4305294C89AE005FD411 /* SharedUtility */,
 				4A7C4304294C8986005FD411 /* Daily */,
@@ -248,6 +255,7 @@
 		4A7C42EE294B2443005FD411 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				4A7C4314294D1CC5005FD411 /* UserCustomDaily */,
 				4A7C42EF294B2457005FD411 /* AlertManager.swift */,
 			);
 			path = Singleton;
@@ -319,6 +327,23 @@
 				4A7C430D294CE18E005FD411 /* UserResponse.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		4A7C430F294D0719005FD411 /* UserDaily */ = {
+			isa = PBXGroup;
+			children = (
+				4A7C4310294D0734005FD411 /* UserDailyRequest.swift */,
+				4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */,
+			);
+			path = UserDaily;
+			sourceTree = "<group>";
+		};
+		4A7C4314294D1CC5005FD411 /* UserCustomDaily */ = {
+			isa = PBXGroup;
+			children = (
+				4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */,
+			);
+			path = UserCustomDaily;
 			sourceTree = "<group>";
 		};
 		6645AF8537F8CECC34138B9F /* Frameworks */ = {
@@ -444,17 +469,20 @@
 				4A7C4309294C89CB005FD411 /* Either.swift in Sources */,
 				4A7C42FE294C8907005FD411 /* Conn.swift in Sources */,
 				4A32D72F2949B3AC0074D847 /* ViewController.swift in Sources */,
+				4A7C4311294D0734005FD411 /* UserDailyRequest.swift in Sources */,
 				4A32D74F2949CC640074D847 /* ClassNameGettable.swift in Sources */,
 				4A7C4303294C8974005FD411 /* CarlaError.swift in Sources */,
 				4A32D75E2949D41F0074D847 /* DailyListTableViewCell.swift in Sources */,
 				4A7C42FC294C88E0005FD411 /* SharedRequests.swift in Sources */,
 				4A32D72B2949B3AC0074D847 /* AppDelegate.swift in Sources */,
+				4A7C4316294D1CE3005FD411 /* UserCustomDailyManager.swift in Sources */,
 				4A7C4300294C893E005FD411 /* SharedExtensions.swift in Sources */,
 				4A32D7492949CB2D0074D847 /* DailyListViewController.swift in Sources */,
 				4A32D76A2949E81F0074D847 /* UIColor.swift in Sources */,
 				4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */,
 				4A32D7612949DBCB0074D847 /* Daily.swift in Sources */,
 				4A32D72D2949B3AC0074D847 /* SceneDelegate.swift in Sources */,
+				4A7C4313294D1B82005FD411 /* UserDailyResponse.swift in Sources */,
 				4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */,
 				4A32D7532949CFFC0074D847 /* UITableView.swift in Sources */,
 				4A7C430C294C8AF5005FD411 /* User.swift in Sources */,

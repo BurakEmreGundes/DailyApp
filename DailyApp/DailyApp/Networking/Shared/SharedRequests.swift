@@ -54,11 +54,13 @@ struct GetDailies : CodableReturningRequest, ErrorLoggableRequest{
 
 
 struct CreateUserDaily : CodableReturningRequest, ErrorLoggableRequest{
-    typealias ResponseType = Either<DailyResponse, DASError>
+    typealias ResponseType = Either<UserDailyResponse, DASError>
+    
+    var userDailyRequest : UserDailyRequest
     
     var data: RequestData {
-    let path = NetworkingConstants.PASURL + "api/v1/dailies"
-    return RequestData(path: path, method: .get, params: nil, headers: NetworkingConstants.authHeader)
+    let path = NetworkingConstants.PASURL + "api/v1/userDailies"
+        return RequestData(path: path, method: .post, params: userDailyRequest.asDictionary(), headers: NetworkingConstants.authHeader)
     }
 }
 
