@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.overrideUserInterfaceStyle = .light
 
         
-        if true {
+        if !User.current.userDidStartDailyChallenge {
             window?.rootViewController = UINavigationController(rootViewController: UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "dailyListVC"))
         }else{
             window?.rootViewController = UINavigationController(rootViewController: UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "homeVC"))

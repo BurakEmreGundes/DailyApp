@@ -37,6 +37,9 @@
 		4A7C4311294D0734005FD411 /* UserDailyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4310294D0734005FD411 /* UserDailyRequest.swift */; };
 		4A7C4313294D1B82005FD411 /* UserDailyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */; };
 		4A7C4316294D1CE3005FD411 /* UserCustomDailyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */; };
+		4A7C431A294D2BF4005FD411 /* DailyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4319294D2BF4005FD411 /* DailyRequest.swift */; };
+		4A7C431C294D4533005FD411 /* UserDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C431B294D4533005FD411 /* UserDaily.swift */; };
+		4A7C431F294E08FA005FD411 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C431E294E08FA005FD411 /* DayView.swift */; };
 		E909CF21E0032F18688CDDCA /* libPods-DailyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434CD87663BEAE0151E84159 /* libPods-DailyApp.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		4A7C4310294D0734005FD411 /* UserDailyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDailyRequest.swift; sourceTree = "<group>"; };
 		4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDailyResponse.swift; sourceTree = "<group>"; };
 		4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomDailyManager.swift; sourceTree = "<group>"; };
+		4A7C4319294D2BF4005FD411 /* DailyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRequest.swift; sourceTree = "<group>"; };
+		4A7C431B294D4533005FD411 /* UserDaily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDaily.swift; sourceTree = "<group>"; };
+		4A7C431E294E08FA005FD411 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		7C5074072D2F0A090CB2667F /* Pods-DailyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.debug.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE3CA918E1CD156FDF84116 /* Pods-DailyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.release.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +148,7 @@
 		4A32D73F2949BB900074D847 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A7C431D294E08DD005FD411 /* Home */,
 				4A32D7432949BE890074D847 /* DailyList */,
 			);
 			path = View;
@@ -307,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				4A32D7602949DBCB0074D847 /* Daily.swift */,
+				4A7C4319294D2BF4005FD411 /* DailyRequest.swift */,
 			);
 			path = Daily;
 			sourceTree = "<group>";
@@ -334,6 +342,7 @@
 			children = (
 				4A7C4310294D0734005FD411 /* UserDailyRequest.swift */,
 				4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */,
+				4A7C431B294D4533005FD411 /* UserDaily.swift */,
 			);
 			path = UserDaily;
 			sourceTree = "<group>";
@@ -344,6 +353,14 @@
 				4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */,
 			);
 			path = UserCustomDaily;
+			sourceTree = "<group>";
+		};
+		4A7C431D294E08DD005FD411 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4A7C431E294E08FA005FD411 /* DayView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		6645AF8537F8CECC34138B9F /* Frameworks */ = {
@@ -463,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A7C4307294C89C2005FD411 /* DASError.swift in Sources */,
+				4A7C431A294D2BF4005FD411 /* DailyRequest.swift in Sources */,
 				4A7C42FA294C88C7005FD411 /* Reachability.swift in Sources */,
 				4A32D7642949E70A0074D847 /* ExtraDailyViewController.swift in Sources */,
 				4A32D7672949E7FA0074D847 /* UINavigationController.swift in Sources */,
@@ -482,11 +500,13 @@
 				4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */,
 				4A32D7612949DBCB0074D847 /* Daily.swift in Sources */,
 				4A32D72D2949B3AC0074D847 /* SceneDelegate.swift in Sources */,
+				4A7C431F294E08FA005FD411 /* DayView.swift in Sources */,
 				4A7C4313294D1B82005FD411 /* UserDailyResponse.swift in Sources */,
 				4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */,
 				4A32D7532949CFFC0074D847 /* UITableView.swift in Sources */,
 				4A7C430C294C8AF5005FD411 /* User.swift in Sources */,
 				4A7C430E294CE18E005FD411 /* UserResponse.swift in Sources */,
+				4A7C431C294D4533005FD411 /* UserDaily.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

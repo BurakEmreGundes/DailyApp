@@ -47,7 +47,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87450980392156863" green="1" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sBL-Wz-t9A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4xL-IU-OlZ"/>
                             <constraint firstItem="sBL-Wz-t9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AOH-SF-YzR"/>
@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281.5384615384614" y="63.981042654028435"/>
+            <point key="canvasLocation" x="971" y="55"/>
         </scene>
         <!--Extra Daily View Controller-->
         <scene sceneID="mWy-mT-Nbk">
@@ -134,7 +134,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SMa-9o-rXc"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SMa-9o-rXc" firstAttribute="trailing" secondItem="sda-DQ-haO" secondAttribute="trailing" id="81g-Y8-8Om"/>
                             <constraint firstItem="XAi-HN-G43" firstAttribute="height" secondItem="XmU-4C-AVC" secondAttribute="height" id="Gnn-Ed-ZpM"/>
@@ -184,7 +184,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vnv-yt-Lww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376.92307692307691" y="55.45023696682464"/>
+            <point key="canvasLocation" x="-32" y="55"/>
         </scene>
     </scenes>
     <resources>

@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     }()
     
     private lazy var mainStackView : UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [scoreView])
+        let sv = UIStackView(arrangedSubviews: [scoreView, dailyTitleLabel, daysContainerView])
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.alignment = .fill
         sv.distribution = .fill
@@ -44,12 +44,14 @@ class HomeViewController: UIViewController {
     
     private lazy var scoreView : UIView = {
         let view = UIView()
-        view.backgroundColor = .systemOrange
+        view.backgroundColor = .white
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 2.0
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 12.0
         return view
     }()
-    
+     
     private lazy var scoreLabel : UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +60,78 @@ class HomeViewController: UIViewController {
         label.font = .systemFont(ofSize: 18.0, weight: .bold)
        return label
     }()
+    
+    private lazy var dailyTitleLabel : UILabel = {
+        let label = UILabel()
+         label.translatesAutoresizingMaskIntoConstraints = false
+         label.text = "Görevlerim"
+         label.textColor = .label
+         label.font = .systemFont(ofSize: 28.0, weight: .bold)
+        return label
+    }()
+    
+    
+    private lazy var daysContainerView : UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
+    private lazy var dayView : DayView = {
+        let view = DayView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var dayView1 : DayView = {
+        let view = DayView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var dayView2 : DayView = {
+        let view = DayView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var dayView3 : DayView = {
+        let view = DayView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var dayView4 : DayView = {
+        let view = DayView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var dayView5 : DayView = {
+        let view = DayView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var dayView6 : DayView = {
+        let view = DayView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var dayStackView : UIStackView = {
+        let sv = UIStackView(arrangedSubviews: [dayView,dayView1, dayView2, dayView3, dayView4, dayView5, dayView6])
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.alignment = .fill
+        sv.distribution = .fillEqually
+        sv.axis = .horizontal
+        sv.spacing = 6
+        return sv
+    }()
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -85,6 +159,8 @@ class HomeViewController: UIViewController {
         scrollView.addSubview(mainView)
         mainView.addSubview(mainStackView)
         scoreView.addSubview(scoreLabel)
+        
+        daysContainerView.addSubview(dayStackView)
         
         view.layoutSubviews()
         view.layoutIfNeeded()
@@ -118,10 +194,17 @@ class HomeViewController: UIViewController {
             
             scoreLabel.leadingAnchor.constraint(equalTo: scoreView.leadingAnchor,constant: 16),
             scoreLabel.trailingAnchor.constraint(equalTo: scoreView.trailingAnchor,constant: -16),
-            scoreLabel.centerYAnchor.constraint(equalTo: scoreView.centerYAnchor)
+            scoreLabel.centerYAnchor.constraint(equalTo: scoreView.centerYAnchor),
+
+            dayStackView.topAnchor.constraint(equalTo: daysContainerView.topAnchor),
+            dayStackView.leadingAnchor.constraint(equalTo: daysContainerView.leadingAnchor),
+            dayStackView.trailingAnchor.constraint(equalTo: daysContainerView.trailingAnchor),
+            dayStackView.bottomAnchor.constraint(equalTo: daysContainerView.bottomAnchor),
             
             
         ])
+        
+        mainStackView.setCustomSpacing(28, after: scoreView)
         
     }
     

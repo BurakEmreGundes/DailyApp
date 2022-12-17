@@ -11,14 +11,6 @@ import Foundation
 class User:Codable {
     var _id : String?
 
-    var JWTToken: String? {
-        get {
-            return UserDefaults.standard.string(forKey: "JWTToken")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "JWTToken")
-        }
-    }
     
     var userId : String? {
         get {
@@ -26,6 +18,16 @@ class User:Codable {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "userId")
+        }
+    }
+    
+    
+    var userDidStartDailyChallenge : Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "userDidStartDailyChallenge")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userDidStartDailyChallenge")
         }
     }
     

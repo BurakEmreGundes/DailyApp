@@ -9,12 +9,9 @@ import UIKit
 
 class ExtraDailyViewController: UIViewController {
 
+    var extraDailyList : [Daily] = UserCustomDailyManager.shared.customDailies
     
-    var extraDailyList : [Daily] = []{
-        didSet{
-            tableView.reloadData()
-        }
-    }
+    var selectedBaseDailies : [Daily] = [] 
     
     //var textFieldText
     
@@ -28,6 +25,7 @@ class ExtraDailyViewController: UIViewController {
     }
     
     private func configure(){
+        UserCustomDailyManager.shared.delegate = self
         configureTableView()
         configureLayoutAttributes()
         configureNavigationBar()
@@ -42,8 +40,11 @@ class ExtraDailyViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.tableView.reloadData()
+        }
+
         self.navigationItem.backBarButtonItem?.title = nil
         title = nil
     }
@@ -58,8 +59,8 @@ class ExtraDailyViewController: UIViewController {
             
             return
         }
-        
-        //extraDailyList.append(Daily(id: "21421", message: message, isChecked: false))
+                
+        UserCustomDailyManager.shared.createCustomDaily(dailyRequest: DailyRequest(message: message, isBase: false))
         
     }
     
@@ -79,8 +80,17 @@ class ExtraDailyViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.register(with: DailyListTableViewCell.className)
     }
-
-
+    
+    
+    private func goToHomeScreen(){
+        let sb = UIStoryboard(name: "Home", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "homeVC") as? HomeViewController else { return }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+   
+    
 
 }
 
@@ -97,17 +107,44 @@ extension ExtraDailyViewController : UITableViewDelegate, UITableViewDataSource{
         return extraDailyList.count
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            UserCustomDailyManager.shared.deleteCustomDaily(daily: extraDailyList[indexPath.row])
+            extraDailyList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 extension ExtraDailyViewController : AlertManagerTwoActionDelegate {
-    func tappedContunie() {}
+    func tappedContunie() {
+
+    }
     
     func tappedCancel() {
-        let sb = UIStoryboard(name: "Home", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "homeVC") as? HomeViewController else { return }
+        guard let userId = User.current.userId else {return}
+               
+        selectedBaseDailies.insert(contentsOf: extraDailyList, at: selectedBaseDailies.count)
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        let allDailies : [Daily] = selectedBaseDailies
+        
+        CreateUserDaily(userDailyRequest: UserDailyRequest(user: userId, dailies: allDailies)).execute {[weak self] response in
+            guard let strongSelf = self else {return}
+            switch response{
+            case .this(_):
+                strongSelf.selectedBaseDailies.insert(contentsOf: strongSelf.extraDailyList, at: strongSelf.selectedBaseDailies.count)
+                User.current.userDidStartDailyChallenge = true
+                strongSelf.goToHomeScreen()
+            case .that(let error):
+                print(error)
+            }
+        } onError: { error in
+            print(error)
+        }
     }
     
     
@@ -117,5 +154,12 @@ extension ExtraDailyViewController : UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
+    }
+}
+
+extension ExtraDailyViewController : UserCustomDailyManagerDelegate {
+    func setCustomDailies(customDailies: [Daily]) {
+        self.extraDailyList = customDailies
+        self.tableView.reloadData()
     }
 }

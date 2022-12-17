@@ -21,7 +21,6 @@ class DailyListViewController: UIViewController {
         }
     }
     
-    var lastSelectedDailies : [Daily] = []
      
     @IBOutlet weak var tableView: UITableView!
     
@@ -73,44 +72,18 @@ class DailyListViewController: UIViewController {
         finishSelectButton.layer.cornerRadius = 12.0
     }
     
-    private func checkIsArraySame() -> Bool {
-        return selectedDailies.withUnsafeBufferPointer{ outher in
-            lastSelectedDailies.withUnsafeBufferPointer { inner in
-                return (inner.baseAddress == outher.baseAddress)
-            }
-            
-        }
-    }
     
-    private func goToExtraDailyVC(){
+    private func goToExtraDailyVC(selectedBaseDailies : [Daily]){
          let sb = UIStoryboard(name: "Main", bundle: nil)
          guard let vc = sb.instantiateViewController(withIdentifier: "extraDailyVC") as? ExtraDailyViewController else { return }
          
+        vc.selectedBaseDailies = selectedBaseDailies
          self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func selectButtonTapped(_ sender: Any) {
-        guard let userId = User.current.userId else {return}
-        //selectedDailies.count > 0, !checkIsArraySame()
-        
-        if false {
-            CreateUserDaily(userDailyRequest: UserDailyRequest(user: userId, dailies: selectedDailies)).execute {[weak self] response in
-                guard let strongSelf = self else {return}
-                switch response{
-                case .this(let success):
-                    strongSelf.lastSelectedDailies = strongSelf.selectedDailies
-                   // strongSelf.goToExtraDailyVC()
-                case .that(let error):
-                    print(error)
-                }
-            } onError: { error in
-                print(error)
-            }
-
-        }else{
-            goToExtraDailyVC()
-        }
-
+        guard let _ = User.current.userId else {return}
+        goToExtraDailyVC(selectedBaseDailies: selectedDailies)
     }
     
 }
@@ -121,7 +94,6 @@ extension DailyListViewController : UITableViewDelegate, UITableViewDataSource{
         guard let dailyList = dailyList else {return UITableViewCell()}
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DailyListTableViewCell", for: indexPath) as? DailyListTableViewCell else {return UITableViewCell()}
-        var isCheckout : Bool = false
         
         cell.configureCell(cellId: dailyList[indexPath.row]._id, dailyLabel: dailyList[indexPath.row].message, isCheckout: selectedDailies.contains(where: {$0._id == dailyList[indexPath.row]._id }))
         
@@ -137,12 +109,8 @@ extension DailyListViewController : UITableViewDelegate, UITableViewDataSource{
         }else{
             selectedDailies.append(dailyList[indexPath.row])
         }
-        
         selectedDailies.withUnsafeBufferPointer {_ in
-            
         }
-        print(selectedDailies)
-       // dailyList[indexPath.row].isChecked = !dailyList[indexPath.row].isChecked
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
