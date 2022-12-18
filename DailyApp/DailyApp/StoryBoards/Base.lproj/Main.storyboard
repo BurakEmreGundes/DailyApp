@@ -47,7 +47,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.87450980392156863" green="1" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sBL-Wz-t9A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4xL-IU-OlZ"/>
                             <constraint firstItem="sBL-Wz-t9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AOH-SF-YzR"/>
@@ -134,7 +134,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SMa-9o-rXc"/>
-                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SMa-9o-rXc" firstAttribute="trailing" secondItem="sda-DQ-haO" secondAttribute="trailing" id="81g-Y8-8Om"/>
                             <constraint firstItem="XAi-HN-G43" firstAttribute="height" secondItem="XmU-4C-AVC" secondAttribute="height" id="Gnn-Ed-ZpM"/>

@@ -14,4 +14,9 @@ struct UserDailyResponse : Codable {
 }
 
 
+struct UserAllDailyResponse : Codable {
+    let success : Bool
+    let data : UserDaily
+}
+
 

@@ -8,6 +8,7 @@
 import Foundation
 
 struct UserDaily : Codable {
+    let _id : String
     let user : String
-    let dailies : [String]
+    let dailies : [Daily]
 }

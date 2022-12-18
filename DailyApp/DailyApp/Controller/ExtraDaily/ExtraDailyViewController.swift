@@ -128,16 +128,17 @@ extension ExtraDailyViewController : AlertManagerTwoActionDelegate {
     func tappedCancel() {
         guard let userId = User.current.userId else {return}
                
-        selectedBaseDailies.insert(contentsOf: extraDailyList, at: selectedBaseDailies.count)
+        selectedBaseDailies.insert(contentsOf: extraDailyList, at: selectedBaseDailies.count) 
         
         let allDailies : [Daily] = selectedBaseDailies
         
         CreateUserDaily(userDailyRequest: UserDailyRequest(user: userId, dailies: allDailies)).execute {[weak self] response in
             guard let strongSelf = self else {return}
             switch response{
-            case .this(_):
+            case .this(let success):
                 strongSelf.selectedBaseDailies.insert(contentsOf: strongSelf.extraDailyList, at: strongSelf.selectedBaseDailies.count)
                 User.current.userDidStartDailyChallenge = true
+                User.current.userDailyId = success.data._id
                 strongSelf.goToHomeScreen()
             case .that(let error):
                 print(error)

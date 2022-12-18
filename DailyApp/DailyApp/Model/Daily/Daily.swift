@@ -13,6 +13,7 @@ struct Daily : Codable {
     let message : String
     let isChecked : Bool
     let isBase : Bool
+    let isCompleted : Bool 
 }
 
 

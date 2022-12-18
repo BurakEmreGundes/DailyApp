@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="DailyApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="347" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmY-9P-qbz">
+                        <rect key="frame" x="0.0" y="12.666666666666664" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="KN9-Ws-uAS"/>
+                            <constraint firstAttribute="height" constant="40" id="Vnd-hN-zOt"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dişlerini Fırçala" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqZ-9m-2Bq">
+                        <rect key="frame" x="40" y="22.333333333333336" width="291" height="20.333333333333336"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fqZ-9m-2Bq" firstAttribute="centerY" secondItem="hmY-9P-qbz" secondAttribute="centerY" id="0lT-lk-qq5"/>
+                    <constraint firstItem="fqZ-9m-2Bq" firstAttribute="leading" secondItem="hmY-9P-qbz" secondAttribute="trailing" id="72k-cF-m7f"/>
+                    <constraint firstItem="fqZ-9m-2Bq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MmT-pg-ITS"/>
+                    <constraint firstAttribute="trailing" secondItem="fqZ-9m-2Bq" secondAttribute="trailing" constant="16" id="msg-2Y-jec"/>
+                    <constraint firstItem="hmY-9P-qbz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vaO-75-tih"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="checkButton" destination="hmY-9P-qbz" id="27x-F4-prS"/>
+                <outlet property="dailyLabel" destination="fqZ-9m-2Bq" id="HGn-ph-YPn"/>
+            </connections>
+            <point key="canvasLocation" x="151.53846153846155" y="-3.9099526066350707"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="123"/>
+    </resources>
+</document>

@@ -97,4 +97,16 @@ struct DeleteDaily : CodableReturningRequest, ErrorLoggableRequest{
 }
 
 
+struct GetUserDailies : CodableReturningRequest, ErrorLoggableRequest{
+    typealias ResponseType = Either<UserAllDailyResponse, DASError>
+    
+    var id : String
+    
+    var data: RequestData {
+        let path = NetworkingConstants.PASURL + "api/v1/userDailies/" + id
+        return RequestData(path: path, method: .get, params: nil, headers: NetworkingConstants.authHeader)
+    }
+}
+
+
 

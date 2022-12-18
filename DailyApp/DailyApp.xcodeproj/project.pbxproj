@@ -22,6 +22,10 @@
 		4A32D7642949E70A0074D847 /* ExtraDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7632949E70A0074D847 /* ExtraDailyViewController.swift */; };
 		4A32D7672949E7FA0074D847 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7662949E7FA0074D847 /* UINavigationController.swift */; };
 		4A32D76A2949E81F0074D847 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7692949E81F0074D847 /* UIColor.swift */; };
+		4A78B6FF294E21A1003315E9 /* DayStackViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78B6FE294E21A1003315E9 /* DayStackViewView.swift */; };
+		4A78B703294E30AB003315E9 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78B701294E30AB003315E9 /* HomeTableViewCell.swift */; };
+		4A78B704294E30AB003315E9 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A78B702294E30AB003315E9 /* HomeTableViewCell.xib */; };
+		4A78B708294F8AB6003315E9 /* ListForDayUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78B707294F8AB6003315E9 /* ListForDayUIModel.swift */; };
 		4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C42EF294B2457005FD411 /* AlertManager.swift */; };
 		4A7C42F2294B3911005FD411 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C42F1294B3911005FD411 /* Home.storyboard */; };
 		4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C42F4294B3CE1005FD411 /* HomeViewController.swift */; };
@@ -62,6 +66,10 @@
 		4A32D7632949E70A0074D847 /* ExtraDailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraDailyViewController.swift; sourceTree = "<group>"; };
 		4A32D7662949E7FA0074D847 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		4A32D7692949E81F0074D847 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4A78B6FE294E21A1003315E9 /* DayStackViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayStackViewView.swift; sourceTree = "<group>"; };
+		4A78B701294E30AB003315E9 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		4A78B702294E30AB003315E9 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		4A78B707294F8AB6003315E9 /* ListForDayUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListForDayUIModel.swift; sourceTree = "<group>"; };
 		4A7C42EF294B2457005FD411 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		4A7C42F1294B3911005FD411 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4A7C42F4294B3CE1005FD411 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +267,32 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
+		4A78B6FC294E215F003315E9 /* DayView */ = {
+			isa = PBXGroup;
+			children = (
+				4A7C431E294E08FA005FD411 /* DayView.swift */,
+			);
+			path = DayView;
+			sourceTree = "<group>";
+		};
+		4A78B6FD294E216F003315E9 /* DayStackView */ = {
+			isa = PBXGroup;
+			children = (
+				4A78B6FC294E215F003315E9 /* DayView */,
+				4A78B6FE294E21A1003315E9 /* DayStackViewView.swift */,
+			);
+			path = DayStackView;
+			sourceTree = "<group>";
+		};
+		4A78B700294E3029003315E9 /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4A78B701294E30AB003315E9 /* HomeTableViewCell.swift */,
+				4A78B702294E30AB003315E9 /* HomeTableViewCell.xib */,
+			);
+			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
 		4A7C42EE294B2443005FD411 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +377,7 @@
 				4A7C4310294D0734005FD411 /* UserDailyRequest.swift */,
 				4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */,
 				4A7C431B294D4533005FD411 /* UserDaily.swift */,
+				4A78B707294F8AB6003315E9 /* ListForDayUIModel.swift */,
 			);
 			path = UserDaily;
 			sourceTree = "<group>";
@@ -358,7 +393,8 @@
 		4A7C431D294E08DD005FD411 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4A7C431E294E08FA005FD411 /* DayView.swift */,
+				4A78B700294E3029003315E9 /* HomeTableViewCell */,
+				4A78B6FD294E216F003315E9 /* DayStackView */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -443,6 +479,7 @@
 				4A7C42F2294B3911005FD411 /* Home.storyboard in Resources */,
 				4A32D75F2949D41F0074D847 /* DailyListTableViewCell.xib in Resources */,
 				4A32D7342949B3AE0074D847 /* Assets.xcassets in Resources */,
+				4A78B704294E30AB003315E9 /* HomeTableViewCell.xib in Resources */,
 				4A32D7322949B3AC0074D847 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +522,7 @@
 				4A32D7642949E70A0074D847 /* ExtraDailyViewController.swift in Sources */,
 				4A32D7672949E7FA0074D847 /* UINavigationController.swift in Sources */,
 				4A7C4309294C89CB005FD411 /* Either.swift in Sources */,
+				4A78B703294E30AB003315E9 /* HomeTableViewCell.swift in Sources */,
 				4A7C42FE294C8907005FD411 /* Conn.swift in Sources */,
 				4A32D72F2949B3AC0074D847 /* ViewController.swift in Sources */,
 				4A7C4311294D0734005FD411 /* UserDailyRequest.swift in Sources */,
@@ -497,6 +535,7 @@
 				4A7C4300294C893E005FD411 /* SharedExtensions.swift in Sources */,
 				4A32D7492949CB2D0074D847 /* DailyListViewController.swift in Sources */,
 				4A32D76A2949E81F0074D847 /* UIColor.swift in Sources */,
+				4A78B708294F8AB6003315E9 /* ListForDayUIModel.swift in Sources */,
 				4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */,
 				4A32D7612949DBCB0074D847 /* Daily.swift in Sources */,
 				4A32D72D2949B3AC0074D847 /* SceneDelegate.swift in Sources */,
@@ -504,6 +543,7 @@
 				4A7C4313294D1B82005FD411 /* UserDailyResponse.swift in Sources */,
 				4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */,
 				4A32D7532949CFFC0074D847 /* UITableView.swift in Sources */,
+				4A78B6FF294E21A1003315E9 /* DayStackViewView.swift in Sources */,
 				4A7C430C294C8AF5005FD411 /* User.swift in Sources */,
 				4A7C430E294CE18E005FD411 /* UserResponse.swift in Sources */,
 				4A7C431C294D4533005FD411 /* UserDaily.swift in Sources */,
