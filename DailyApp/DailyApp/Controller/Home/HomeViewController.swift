@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EzPopup
 
 class HomeViewController: UIViewController {
     
@@ -188,14 +189,60 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
+    private func refreshUserDaily(){
+        
+        User.current.userDailyId = nil
+        
+        guard let rootVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "dailyListVC") as? DailyListViewController else {
+            return
+        }
+        
+        UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: rootVC)
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    
+    private func showPopup(viewController: UIViewController) {
+        let popupVC = PopupViewController(contentController: viewController,
+                                          position: .center(nil),
+                                          popupWidth: (view.frame.width * 0.83),
+                                          popupHeight: nil)
+        popupVC.shadowEnabled = false
+        present(popupVC, animated: true, completion: nil)
+    }
+    
+    private func showRefreshPopup(with text: String){
+        let requestClosure: (AlertPopupViewController?) -> Void = { [weak self] (_) in
+           self?.dismiss(animated: true,
+                          completion: nil)
+            self?.refreshUserDaily()
+        }
+        let alertVC = AlertPopupViewController.popup(text: text,
+                                                     image: UIImage(named: "iconSuccessful"), cornerRadius: 12,
+                                                     imageHeight: 60,
+                                                     action: requestClosure)
+        showPopup(viewController: alertVC)
+    }
+    
+    
+    @IBAction func tappedRefresh(_ sender: Any) {
+        showRefreshPopup(with: "7 günlük süren sıfırlanacak. Yeni bir düete çıkmak istediğine emin misin? Hadi bakalım, göster kendini :).")
+    }
+    
     private func getAllUserDailies(){
-        guard let userDailyId = User.current.userDailyId else {return}
+        guard let userDailyId = User.current.userDailyId else {
+            refreshUserDaily()
+            return}
         
         GetUserDailies(id: userDailyId).execute {[weak self] response in
             guard let strongSelf = self else {return}
             switch response{
             case .this(let success):
-                strongSelf.dailyList = success.data.dailies
+                if success.isFinished{
+                    strongSelf.showRefreshPopup(with: "7 günlük süren sıfırlandı. Yeni bir yola çıkıyoruz! Hadi bakalım, göster kendini :).")
+                }else{
+                    strongSelf.dailyList = success.data.dailies
+                }
+               
             case .that(let error):
                 print(error)
             }
@@ -206,13 +253,14 @@ class HomeViewController: UIViewController {
     }
     
     private func updateUserDaily(daily : Daily){
-        UpdateUserDaily(id: daily._id, params: UpdateUserDaily.Params(isCompleted: !daily.isCompleted)).execute {[weak self] response in
+        UpdateUserDaily(id: daily._id, params: UpdateUserDaily.Params(isCompleted: daily.isCompleted)).execute {[weak self] response in
             guard let strongSelf = self else {return}
             switch response{
             case .this(let success):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+               /* DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     strongSelf.getAllUserDailies()
-                }
+                }*/
+                print(success.data.isCompleted)
             case .that(let error):
                 print(error)
             }
@@ -382,11 +430,11 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
             }
         }
 
-      /* DispatchQueue.main.async { [weak self] in
+       DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else {return}
             strongSelf.updateUserDaily(daily: strongSelf.tableViewDatas[indexPath.row])
  
-        }*/
+        }
     }
 }
 

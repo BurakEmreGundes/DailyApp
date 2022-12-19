@@ -71,7 +71,6 @@ class DailyListViewController: UIViewController {
         } onError: { error in
             print(error)
         }
-
     }
     
     

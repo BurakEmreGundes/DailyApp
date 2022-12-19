@@ -19,7 +19,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZKQ-Le-h7d">
-                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="1oj-ty-rlK"/>
+                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" id="1oj-ty-rlK">
+                            <connections>
+                                <action selector="tappedRefresh:" destination="Y6W-OH-hqX" id="FsC-bB-gnD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

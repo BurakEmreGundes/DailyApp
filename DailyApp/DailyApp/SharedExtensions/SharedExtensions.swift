@@ -68,3 +68,18 @@ extension UIView{
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: -verticalOffset).isActive = true
     }
 }
+
+
+extension UIButton {
+    func setText(text: String) {
+        setTitle(text, for: .normal)
+    }
+}
+
+extension UILabel{
+    func configureLabel(color: UIColor = .lightGreyBlue, font: UIFont = UIFont.systemFont(ofSize: 18, weight: .medium)) {
+        textColor = color
+        self.font = font
+    }
+}
+

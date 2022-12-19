@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertPopupViewController" customModule="DailyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="1m0-bV-P74" id="NHz-6l-wt8"/>
+                <outlet property="imageView" destination="pHP-MK-ycN" id="xVo-Ii-uGz"/>
+                <outlet property="imageViewHeightConstraint" destination="YpG-qI-dRH" id="VjT-PK-vOm"/>
+                <outlet property="imageViewTopConstraint" destination="7qU-mX-zVF" id="Vf2-Pk-KH9"/>
+                <outlet property="label" destination="qkV-rg-AOW" id="qbH-UI-4R9"/>
+                <outlet property="titleLabel" destination="yPE-GE-tSG" id="GJn-Y1-Lkk"/>
+                <outlet property="view" destination="iN0-l3-epB" id="r3y-YK-WGd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="243"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconSuccessful" translatesAutoresizingMaskIntoConstraints="NO" id="pHP-MK-ycN">
+                    <rect key="frame" x="0.0" y="16" width="405" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="YpG-qI-dRH"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9CL-2J-GJO">
+                    <rect key="frame" x="16" y="92" width="373" height="59"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Görevler Sıfırlandı" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPE-GE-tSG">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Refresh list successfully." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-rg-AOW">
+                            <rect key="frame" x="0.0" y="28.333333333333329" width="373" height="30.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1m0-bV-P74">
+                    <rect key="frame" x="16" y="183" width="373" height="44"/>
+                    <color key="backgroundColor" systemColor="linkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="wFK-RN-KlH"/>
+                    </constraints>
+                    <color key="tintColor" red="0.87450980389999999" green="0.87450980389999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Tamam">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="tappedButton:" destination="-1" eventType="touchUpInside" id="mQG-sX-DNa"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="pHP-MK-ycN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="7qU-mX-zVF"/>
+                <constraint firstItem="9CL-2J-GJO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="LzZ-cE-yJD"/>
+                <constraint firstAttribute="bottom" secondItem="1m0-bV-P74" secondAttribute="bottom" constant="16" id="NHf-dD-axU"/>
+                <constraint firstItem="pHP-MK-ycN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RBL-Nu-7rd"/>
+                <constraint firstItem="1m0-bV-P74" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="aPX-Ik-FWa"/>
+                <constraint firstItem="1m0-bV-P74" firstAttribute="top" secondItem="9CL-2J-GJO" secondAttribute="bottom" constant="32" id="hVi-PJ-BTr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pHP-MK-ycN" secondAttribute="trailing" id="hcq-05-wOp"/>
+                <constraint firstItem="9CL-2J-GJO" firstAttribute="top" secondItem="pHP-MK-ycN" secondAttribute="bottom" constant="16" id="ryu-hE-bVb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1m0-bV-P74" secondAttribute="trailing" constant="16" id="sa9-BC-LhL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9CL-2J-GJO" secondAttribute="trailing" constant="16" id="vKz-3r-a1T"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="194.61538461538461" y="-111.96682464454976"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconSuccessful" width="60" height="60"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,16 +1,20 @@
 PODS:
+  - EzPopup (1.2)
   - Kingfisher (4.10.1)
 
 DEPENDENCIES:
+  - EzPopup (= 1.2)
   - Kingfisher
 
 SPEC REPOS:
   trunk:
+    - EzPopup
     - Kingfisher
 
 SPEC CHECKSUMS:
+  EzPopup: 989ac21992a82ad6d1245c747a78bf3833279ef0
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
 
-PODFILE CHECKSUM: 7c8251e9311a336b2bb1a53c4f7687487ab9f74a
+PODFILE CHECKSUM: 818186a87724a4b4dcbc78a0eb84db76939cf692
 
 COCOAPODS: 1.11.3

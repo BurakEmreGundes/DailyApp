@@ -31,6 +31,8 @@
 		4A78B7102950BD3F003315E9 /* MainTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A78B70F2950BD3F003315E9 /* MainTutorial.xib */; };
 		4A7A5E032950C7AF00C3B63C /* MainTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E022950C7AF00C3B63C /* MainTutorial.swift */; };
 		4A7A5E072950C7FA00C3B63C /* CarlaIBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E062950C7FA00C3B63C /* CarlaIBView.swift */; };
+		4A7A5E0A2951073600C3B63C /* AlertPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E092951073600C3B63C /* AlertPopupViewController.swift */; };
+		4A7A5E0D29510BC800C3B63C /* AlertPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */; };
 		4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C42EF294B2457005FD411 /* AlertManager.swift */; };
 		4A7C42F2294B3911005FD411 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C42F1294B3911005FD411 /* Home.storyboard */; };
 		4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C42F4294B3CE1005FD411 /* HomeViewController.swift */; };
@@ -80,6 +82,8 @@
 		4A78B70F2950BD3F003315E9 /* MainTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTutorial.xib; sourceTree = "<group>"; };
 		4A7A5E022950C7AF00C3B63C /* MainTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTutorial.swift; sourceTree = "<group>"; };
 		4A7A5E062950C7FA00C3B63C /* CarlaIBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarlaIBView.swift; sourceTree = "<group>"; };
+		4A7A5E092951073600C3B63C /* AlertPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPopupViewController.swift; sourceTree = "<group>"; };
+		4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertPopupViewController.xib; sourceTree = "<group>"; };
 		4A7C42EF294B2457005FD411 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		4A7C42F1294B3911005FD411 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4A7C42F4294B3CE1005FD411 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		4A32D7402949BB950074D847 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4A7A5E08295105F700C3B63C /* PopUp */,
 				4A78B70B2950B9C0003315E9 /* BottomSheet */,
 				4A7C42F3294B3CC6005FD411 /* Home */,
 				4A32D7622949E6A10074D847 /* ExtraDaily */,
@@ -337,6 +342,15 @@
 				4A7A5E062950C7FA00C3B63C /* CarlaIBView.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		4A7A5E08295105F700C3B63C /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				4A7A5E092951073600C3B63C /* AlertPopupViewController.swift */,
+				4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */,
+			);
+			path = PopUp;
 			sourceTree = "<group>";
 		};
 		4A7C42EE294B2443005FD411 /* Singleton */ = {
@@ -522,6 +536,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7A5E0D29510BC800C3B63C /* AlertPopupViewController.xib in Resources */,
 				4A78B7102950BD3F003315E9 /* MainTutorial.xib in Resources */,
 				4A32D7372949B3AE0074D847 /* LaunchScreen.storyboard in Resources */,
 				4A7C42F2294B3911005FD411 /* Home.storyboard in Resources */,
@@ -584,6 +599,7 @@
 				4A7C4316294D1CE3005FD411 /* UserCustomDailyManager.swift in Sources */,
 				4A7C4300294C893E005FD411 /* SharedExtensions.swift in Sources */,
 				4A32D7492949CB2D0074D847 /* DailyListViewController.swift in Sources */,
+				4A7A5E0A2951073600C3B63C /* AlertPopupViewController.swift in Sources */,
 				4A32D76A2949E81F0074D847 /* UIColor.swift in Sources */,
 				4A78B708294F8AB6003315E9 /* ListForDayUIModel.swift in Sources */,
 				4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */,
