@@ -39,6 +39,15 @@ class User:Codable {
             UserDefaults.standard.set(newValue, forKey: "userDailyId")
         }
     }
+    
+    var userDidShowTutorialPage : Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "userDidShowTutorialPage")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userDidShowTutorialPage")
+        }
+    }
 
     
 

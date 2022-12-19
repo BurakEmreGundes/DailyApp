@@ -31,11 +31,15 @@ class HomeTableViewCell: UITableViewCell, ClassNameGettable {
     
      func configureCell(text: String, isCompleted: Bool){
         
-         if isCompleted{
+        /* if isCompleted{
              dailyLabel.attributedText = createStrikeLabel(baseText: text)
          }else{
+             let attr = NSMutableAttributedString(string: text)
+             attr.removeAttribute(NSAttributedString.Key.strikethroughStyle, range: NSMakeRange(0,attr.length))
              dailyLabel.text = text
-         }
+         }*/
+         
+         dailyLabel.text = text
     
         checkButton.setImage(UIImage(systemName: isCompleted ? "checkmark.circle.fill" : "circle"), for: .normal)
     }

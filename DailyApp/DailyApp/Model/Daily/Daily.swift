@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct Daily : Codable {
+class Daily : Codable {
     let _id : String
     let message : String
     let isChecked : Bool
     let isBase : Bool
-    let isCompleted : Bool 
+    var isCompleted : Bool
 }
 
 

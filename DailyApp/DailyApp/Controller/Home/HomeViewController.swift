@@ -20,15 +20,17 @@ class HomeViewController: UIViewController {
     
     private var tableViewDatas : [Daily] = [] {
         didSet{
-                DispatchQueue.main.async { [weak self] in
-                    guard let strongSelf = self else {return}
-                    strongSelf.tableView.reloadData()
-                }
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.tableView.reloadData()
+            }
         }
     }
     
     private var lastExtraIndexes : Int = 0
-
+    
+    private var currentDayLevel : Int = 0
+    
     private lazy var containerView : UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -64,10 +66,10 @@ class HomeViewController: UIViewController {
     
     private lazy var scoreTitleLabel : UILabel = {
         let label = UILabel()
-         label.translatesAutoresizingMaskIntoConstraints = false
-         label.text = "Skorum"
-         label.textColor = .label
-         label.font = .systemFont(ofSize: 28.0, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Skorum"
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 28.0, weight: .bold)
         return label
     }()
     
@@ -80,22 +82,22 @@ class HomeViewController: UIViewController {
         view.layer.cornerRadius = 12.0
         return view
     }()
-     
+    
     private lazy var scoreLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Toplam Skorun : 892p"
         label.textColor = .label
         label.font = .systemFont(ofSize: 18.0, weight: .bold)
-       return label
+        return label
     }()
     
     private lazy var dailyTitleLabel : UILabel = {
         let label = UILabel()
-         label.translatesAutoresizingMaskIntoConstraints = false
-         label.text = "Görevlerim"
-         label.textColor = .label
-         label.font = .systemFont(ofSize: 28.0, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Görevlerim"
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 28.0, weight: .bold)
         return label
     }()
     
@@ -175,7 +177,7 @@ class HomeViewController: UIViewController {
     
     
     private lazy var tableView : UITableView = {
-       let tableView = UITableView()
+        let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
@@ -200,7 +202,23 @@ class HomeViewController: UIViewController {
         } onError: { error in
             print(error)
         }
-
+        
+    }
+    
+    private func updateUserDaily(daily : Daily){
+        UpdateUserDaily(id: daily._id, params: UpdateUserDaily.Params(isCompleted: !daily.isCompleted)).execute {[weak self] response in
+            guard let strongSelf = self else {return}
+            switch response{
+            case .this(let success):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    strongSelf.getAllUserDailies()
+                }
+            case .that(let error):
+                print(error)
+            }
+        } onError: { error in
+            print(error)
+        }
     }
     
     
@@ -246,7 +264,7 @@ class HomeViewController: UIViewController {
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-                        
+            
             mainView.topAnchor.constraint(equalTo: containerView.topAnchor),
             mainView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             mainView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
@@ -264,12 +282,12 @@ class HomeViewController: UIViewController {
             scoreLabel.leadingAnchor.constraint(equalTo: scoreView.leadingAnchor,constant: 16),
             scoreLabel.trailingAnchor.constraint(equalTo: scoreView.trailingAnchor,constant: -16),
             scoreLabel.centerYAnchor.constraint(equalTo: scoreView.centerYAnchor),
-
+            
             dayStackView.topAnchor.constraint(equalTo: daysContainerView.topAnchor),
             dayStackView.leadingAnchor.constraint(equalTo: daysContainerView.leadingAnchor),
             dayStackView.trailingAnchor.constraint(equalTo: daysContainerView.trailingAnchor),
             dayStackView.bottomAnchor.constraint(equalTo: daysContainerView.bottomAnchor),
-                        
+            
         ])
         
         mainStackView.setCustomSpacing(28, after: scoreView)
@@ -283,21 +301,21 @@ class HomeViewController: UIViewController {
     
     
     private func configureListForDay(){
-       
+        
         if dailyList.count > 7 {
-        for dayLevel in 1...7{
-            
+            for dayLevel in 1...7{
+                
                 let itemCountForDay = ((dailyList.count - (dailyList.count % 7)) / 7)
                 let startIndex = (dayLevel * itemCountForDay) - 1
                 let endIndex = (startIndex + itemCountForDay) - 1
                 let extraIndexes = (dailyList.count % 7)
                 var excDailyList : [Daily] = []
-              
+                
                 
                 for selectedIndex in startIndex...endIndex{
                     excDailyList.append(dailyList[selectedIndex])
                 }
-              
+                
                 lastExtraIndexes = lastExtraIndexes > 0 ? (lastExtraIndexes - 1) : extraIndexes
                 
                 if lastExtraIndexes > 0, dayLevel <= extraIndexes {
@@ -307,26 +325,31 @@ class HomeViewController: UIViewController {
                 listForDay.append(ListForDayUIModel(dailies: excDailyList))
                 
             }
-             
+            
         }else{
             for dayLevel in 1...7{
                 var excDailyList : [Daily] = []
                 if dayLevel > dailyList.count {
-                listForDay.append(ListForDayUIModel(dailies: []))
-                 
+                    listForDay.append(ListForDayUIModel(dailies: []))
+                    
                 }else{
                     excDailyList.append(dailyList[dayLevel - 1])
                     listForDay.append(ListForDayUIModel(dailies: excDailyList))
                 }
-               
+                
             }
         }
         
-        tableViewDatas = listForDay[0].dailies
-
+        if !(tableViewDatas.count > 0){
+            tableViewDatas = listForDay[0].dailies
+        }else{
+            tableViewDatas = listForDay[currentDayLevel - 1].dailies
+        }
+           
+      
     }
     
-
+    
 }
 
 extension HomeViewController : UIScrollViewDelegate{
@@ -347,19 +370,39 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableViewDatas.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        dailyList.map {
+            if $0._id == tableViewDatas[indexPath.row]._id{
+                $0.isCompleted = !$0.isCompleted
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+
+      /* DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.updateUserDaily(daily: strongSelf.tableViewDatas[indexPath.row])
+ 
+        }*/
+    }
 }
 
 extension HomeViewController : DayViewDelegate {
     func tapped(dayLevel: Int) {
+        self.currentDayLevel = dayLevel
         dayStackView.arrangedSubviews.forEach { view in
             if let view = view as? DayView {
-
+                
                 if listForDay.count > 0 {
-                    
                     tableViewDatas =  listForDay[dayLevel - 1].dailies
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                    
                 }
-              
                 
                 if view.dayLevel == dayLevel {
                     view.setColor(color: .carlaBlueSky, textColor : .white, borderColor : .white)
@@ -368,6 +411,6 @@ extension HomeViewController : DayViewDelegate {
                 }
             }
         }
-      
+        
     }
 }

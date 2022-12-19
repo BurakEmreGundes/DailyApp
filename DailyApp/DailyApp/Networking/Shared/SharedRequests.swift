@@ -109,4 +109,24 @@ struct GetUserDailies : CodableReturningRequest, ErrorLoggableRequest{
 }
 
 
+struct UpdateUserDaily :  CodableReturningRequest, ErrorLoggableRequest{
+    typealias ResponseType = Either<CreateDailyResponse, DASError>
+    
+    var id : String
+    
+    
+    struct Params: Codable {
+        let isCompleted : Bool
+    }
+    
+    let params: Params
+   
+    
+    var data: RequestData {
+        let path = NetworkingConstants.PASURL + "api/v1/dailies/" + id
+        return RequestData(path: path, method: .put, params: params.asDictionary(), headers: NetworkingConstants.authHeader)
+    }
+}
+
+
 

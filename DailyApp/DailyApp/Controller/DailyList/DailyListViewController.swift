@@ -21,14 +21,36 @@ class DailyListViewController: UIViewController {
         }
     }
     
+    private var tutorialCount : Int = 0
+    
      
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var finishSelectButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !(User.current.userDidShowTutorialPage) {
+            showTutorial(contentView: mainTutorialView)
+        }
         getDailies()
         configure()
+    }
+    
+    private lazy var mainTutorialView : MainTutorial = {
+        let view = MainTutorial()
+        view.delegate = self
+        view.isUserInteractionEnabled = true
+        return view
+    }()
+    
+    private func showTutorial(contentView : UIView){
+        User.current.userDidShowTutorialPage = true
+        let bottomSheetViewController = BottomSheetController(contentView: contentView, title: "" ,overrideTitle: false, bottomConstraint: 0)
+        bottomSheetViewController.cornerRadius = 12
+        bottomSheetViewController.delegate = self
+        bottomSheetViewController.isStackViewHidden = true
+
+        self.present(bottomSheetViewController, animated: true, completion: nil)
     }
     
     private func configure(){
@@ -118,4 +140,27 @@ extension DailyListViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     
+}
+
+extension DailyListViewController : BottomSheetDelegate {
+    func activateView() {
+        view.isUserInteractionEnabled = true
+    }
+}
+
+extension DailyListViewController : MainTutorialViewDelegate {
+    func tappedNext() {
+        mainTutorialView.configure(image: UIImage(named: "tutorialImage1.1"), titleText: "deneme", descText: "deneme", tutorialCount: tutorialCount)
+        if tutorialCount < 2{
+            tutorialCount += 1
+            self.dismiss(animated: true)
+            self.showTutorial(contentView: mainTutorialView)
+        }else{
+            self.dismiss(animated: true)
+        }
+    }
+    
+    func tappedSkip() {
+        self.dismiss(animated: true)
+    }
 }
