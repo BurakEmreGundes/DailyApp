@@ -10,15 +10,15 @@ import UIKit
 extension UINavigationController{
     
     func configureNavigationForBase() {
-        navigationBar.tintColor = .systemOrange
+        navigationBar.tintColor = .black
         //navigationBar.backIndicatorImage = UIImage(named: "arrowback")
         //navigationBar.backItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.backgroundColor = .lightGray
+            navBarAppearance.backgroundColor = .white
             navBarAppearance.backgroundEffect = nil
-            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemOrange, .font: UIFont.boldSystemFont(ofSize: 22)]
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: UIFont.boldSystemFont(ofSize: 22)]
             navigationBar.scrollEdgeAppearance = navBarAppearance
             navigationBar.standardAppearance = navBarAppearance
         }

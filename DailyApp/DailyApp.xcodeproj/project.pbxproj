@@ -22,6 +22,17 @@
 		4A32D7642949E70A0074D847 /* ExtraDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7632949E70A0074D847 /* ExtraDailyViewController.swift */; };
 		4A32D7672949E7FA0074D847 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7662949E7FA0074D847 /* UINavigationController.swift */; };
 		4A32D76A2949E81F0074D847 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A32D7692949E81F0074D847 /* UIColor.swift */; };
+		4A78B6FF294E21A1003315E9 /* DayStackViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78B6FE294E21A1003315E9 /* DayStackViewView.swift */; };
+		4A78B703294E30AB003315E9 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78B701294E30AB003315E9 /* HomeTableViewCell.swift */; };
+		4A78B704294E30AB003315E9 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A78B702294E30AB003315E9 /* HomeTableViewCell.xib */; };
+		4A78B708294F8AB6003315E9 /* ListForDayUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78B707294F8AB6003315E9 /* ListForDayUIModel.swift */; };
+		4A78B70A294FBA33003315E9 /* UpdateUserDailyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78B709294FBA33003315E9 /* UpdateUserDailyRequest.swift */; };
+		4A78B70D2950B9D1003315E9 /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78B70C2950B9D1003315E9 /* BottomSheetController.swift */; };
+		4A78B7102950BD3F003315E9 /* MainTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A78B70F2950BD3F003315E9 /* MainTutorial.xib */; };
+		4A7A5E032950C7AF00C3B63C /* MainTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E022950C7AF00C3B63C /* MainTutorial.swift */; };
+		4A7A5E072950C7FA00C3B63C /* CarlaIBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E062950C7FA00C3B63C /* CarlaIBView.swift */; };
+		4A7A5E0A2951073600C3B63C /* AlertPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E092951073600C3B63C /* AlertPopupViewController.swift */; };
+		4A7A5E0D29510BC800C3B63C /* AlertPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */; };
 		4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C42EF294B2457005FD411 /* AlertManager.swift */; };
 		4A7C42F2294B3911005FD411 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C42F1294B3911005FD411 /* Home.storyboard */; };
 		4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C42F4294B3CE1005FD411 /* HomeViewController.swift */; };
@@ -37,6 +48,9 @@
 		4A7C4311294D0734005FD411 /* UserDailyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4310294D0734005FD411 /* UserDailyRequest.swift */; };
 		4A7C4313294D1B82005FD411 /* UserDailyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */; };
 		4A7C4316294D1CE3005FD411 /* UserCustomDailyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */; };
+		4A7C431A294D2BF4005FD411 /* DailyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C4319294D2BF4005FD411 /* DailyRequest.swift */; };
+		4A7C431C294D4533005FD411 /* UserDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C431B294D4533005FD411 /* UserDaily.swift */; };
+		4A7C431F294E08FA005FD411 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C431E294E08FA005FD411 /* DayView.swift */; };
 		E909CF21E0032F18688CDDCA /* libPods-DailyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434CD87663BEAE0151E84159 /* libPods-DailyApp.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +73,17 @@
 		4A32D7632949E70A0074D847 /* ExtraDailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraDailyViewController.swift; sourceTree = "<group>"; };
 		4A32D7662949E7FA0074D847 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		4A32D7692949E81F0074D847 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4A78B6FE294E21A1003315E9 /* DayStackViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayStackViewView.swift; sourceTree = "<group>"; };
+		4A78B701294E30AB003315E9 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		4A78B702294E30AB003315E9 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		4A78B707294F8AB6003315E9 /* ListForDayUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListForDayUIModel.swift; sourceTree = "<group>"; };
+		4A78B709294FBA33003315E9 /* UpdateUserDailyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserDailyRequest.swift; sourceTree = "<group>"; };
+		4A78B70C2950B9D1003315E9 /* BottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetController.swift; sourceTree = "<group>"; };
+		4A78B70F2950BD3F003315E9 /* MainTutorial.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTutorial.xib; sourceTree = "<group>"; };
+		4A7A5E022950C7AF00C3B63C /* MainTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTutorial.swift; sourceTree = "<group>"; };
+		4A7A5E062950C7FA00C3B63C /* CarlaIBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarlaIBView.swift; sourceTree = "<group>"; };
+		4A7A5E092951073600C3B63C /* AlertPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPopupViewController.swift; sourceTree = "<group>"; };
+		4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertPopupViewController.xib; sourceTree = "<group>"; };
 		4A7C42EF294B2457005FD411 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		4A7C42F1294B3911005FD411 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4A7C42F4294B3CE1005FD411 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +99,9 @@
 		4A7C4310294D0734005FD411 /* UserDailyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDailyRequest.swift; sourceTree = "<group>"; };
 		4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDailyResponse.swift; sourceTree = "<group>"; };
 		4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomDailyManager.swift; sourceTree = "<group>"; };
+		4A7C4319294D2BF4005FD411 /* DailyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRequest.swift; sourceTree = "<group>"; };
+		4A7C431B294D4533005FD411 /* UserDaily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDaily.swift; sourceTree = "<group>"; };
+		4A7C431E294E08FA005FD411 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		7C5074072D2F0A090CB2667F /* Pods-DailyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.debug.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE3CA918E1CD156FDF84116 /* Pods-DailyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyApp.release.xcconfig"; path = "Target Support Files/Pods-DailyApp/Pods-DailyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +170,9 @@
 		4A32D73F2949BB900074D847 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A7A5E042950C7E200C3B63C /* General */,
+				4A78B70E2950BD03003315E9 /* MainTutorial */,
+				4A7C431D294E08DD005FD411 /* Home */,
 				4A32D7432949BE890074D847 /* DailyList */,
 			);
 			path = View;
@@ -150,6 +181,8 @@
 		4A32D7402949BB950074D847 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4A7A5E08295105F700C3B63C /* PopUp */,
+				4A78B70B2950B9C0003315E9 /* BottomSheet */,
 				4A7C42F3294B3CC6005FD411 /* Home */,
 				4A32D7622949E6A10074D847 /* ExtraDaily */,
 				4A32D7472949CAD70074D847 /* DailyList */,
@@ -252,6 +285,74 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
+		4A78B6FC294E215F003315E9 /* DayView */ = {
+			isa = PBXGroup;
+			children = (
+				4A7C431E294E08FA005FD411 /* DayView.swift */,
+			);
+			path = DayView;
+			sourceTree = "<group>";
+		};
+		4A78B6FD294E216F003315E9 /* DayStackView */ = {
+			isa = PBXGroup;
+			children = (
+				4A78B6FC294E215F003315E9 /* DayView */,
+				4A78B6FE294E21A1003315E9 /* DayStackViewView.swift */,
+			);
+			path = DayStackView;
+			sourceTree = "<group>";
+		};
+		4A78B700294E3029003315E9 /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4A78B701294E30AB003315E9 /* HomeTableViewCell.swift */,
+				4A78B702294E30AB003315E9 /* HomeTableViewCell.xib */,
+			);
+			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		4A78B70B2950B9C0003315E9 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				4A78B70C2950B9D1003315E9 /* BottomSheetController.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		4A78B70E2950BD03003315E9 /* MainTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				4A78B70F2950BD3F003315E9 /* MainTutorial.xib */,
+				4A7A5E022950C7AF00C3B63C /* MainTutorial.swift */,
+			);
+			path = MainTutorial;
+			sourceTree = "<group>";
+		};
+		4A7A5E042950C7E200C3B63C /* General */ = {
+			isa = PBXGroup;
+			children = (
+				4A7A5E052950C7EA00C3B63C /* Shared */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		4A7A5E052950C7EA00C3B63C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4A7A5E062950C7FA00C3B63C /* CarlaIBView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		4A7A5E08295105F700C3B63C /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				4A7A5E092951073600C3B63C /* AlertPopupViewController.swift */,
+				4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
 		4A7C42EE294B2443005FD411 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				4A32D7602949DBCB0074D847 /* Daily.swift */,
+				4A7C4319294D2BF4005FD411 /* DailyRequest.swift */,
 			);
 			path = Daily;
 			sourceTree = "<group>";
@@ -334,6 +436,9 @@
 			children = (
 				4A7C4310294D0734005FD411 /* UserDailyRequest.swift */,
 				4A7C4312294D1B82005FD411 /* UserDailyResponse.swift */,
+				4A7C431B294D4533005FD411 /* UserDaily.swift */,
+				4A78B707294F8AB6003315E9 /* ListForDayUIModel.swift */,
+				4A78B709294FBA33003315E9 /* UpdateUserDailyRequest.swift */,
 			);
 			path = UserDaily;
 			sourceTree = "<group>";
@@ -344,6 +449,15 @@
 				4A7C4315294D1CE3005FD411 /* UserCustomDailyManager.swift */,
 			);
 			path = UserCustomDaily;
+			sourceTree = "<group>";
+		};
+		4A7C431D294E08DD005FD411 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4A78B700294E3029003315E9 /* HomeTableViewCell */,
+				4A78B6FD294E216F003315E9 /* DayStackView */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		6645AF8537F8CECC34138B9F /* Frameworks */ = {
@@ -422,10 +536,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7A5E0D29510BC800C3B63C /* AlertPopupViewController.xib in Resources */,
+				4A78B7102950BD3F003315E9 /* MainTutorial.xib in Resources */,
 				4A32D7372949B3AE0074D847 /* LaunchScreen.storyboard in Resources */,
 				4A7C42F2294B3911005FD411 /* Home.storyboard in Resources */,
 				4A32D75F2949D41F0074D847 /* DailyListTableViewCell.xib in Resources */,
 				4A32D7342949B3AE0074D847 /* Assets.xcassets in Resources */,
+				4A78B704294E30AB003315E9 /* HomeTableViewCell.xib in Resources */,
 				4A32D7322949B3AC0074D847 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,10 +580,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A7C4307294C89C2005FD411 /* DASError.swift in Sources */,
+				4A7C431A294D2BF4005FD411 /* DailyRequest.swift in Sources */,
 				4A7C42FA294C88C7005FD411 /* Reachability.swift in Sources */,
+				4A78B70D2950B9D1003315E9 /* BottomSheetController.swift in Sources */,
 				4A32D7642949E70A0074D847 /* ExtraDailyViewController.swift in Sources */,
 				4A32D7672949E7FA0074D847 /* UINavigationController.swift in Sources */,
 				4A7C4309294C89CB005FD411 /* Either.swift in Sources */,
+				4A78B703294E30AB003315E9 /* HomeTableViewCell.swift in Sources */,
 				4A7C42FE294C8907005FD411 /* Conn.swift in Sources */,
 				4A32D72F2949B3AC0074D847 /* ViewController.swift in Sources */,
 				4A7C4311294D0734005FD411 /* UserDailyRequest.swift in Sources */,
@@ -475,18 +595,26 @@
 				4A32D75E2949D41F0074D847 /* DailyListTableViewCell.swift in Sources */,
 				4A7C42FC294C88E0005FD411 /* SharedRequests.swift in Sources */,
 				4A32D72B2949B3AC0074D847 /* AppDelegate.swift in Sources */,
+				4A7A5E072950C7FA00C3B63C /* CarlaIBView.swift in Sources */,
 				4A7C4316294D1CE3005FD411 /* UserCustomDailyManager.swift in Sources */,
 				4A7C4300294C893E005FD411 /* SharedExtensions.swift in Sources */,
 				4A32D7492949CB2D0074D847 /* DailyListViewController.swift in Sources */,
+				4A7A5E0A2951073600C3B63C /* AlertPopupViewController.swift in Sources */,
 				4A32D76A2949E81F0074D847 /* UIColor.swift in Sources */,
+				4A78B708294F8AB6003315E9 /* ListForDayUIModel.swift in Sources */,
 				4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */,
+				4A78B70A294FBA33003315E9 /* UpdateUserDailyRequest.swift in Sources */,
 				4A32D7612949DBCB0074D847 /* Daily.swift in Sources */,
 				4A32D72D2949B3AC0074D847 /* SceneDelegate.swift in Sources */,
+				4A7C431F294E08FA005FD411 /* DayView.swift in Sources */,
 				4A7C4313294D1B82005FD411 /* UserDailyResponse.swift in Sources */,
 				4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */,
+				4A7A5E032950C7AF00C3B63C /* MainTutorial.swift in Sources */,
 				4A32D7532949CFFC0074D847 /* UITableView.swift in Sources */,
+				4A78B6FF294E21A1003315E9 /* DayStackViewView.swift in Sources */,
 				4A7C430C294C8AF5005FD411 /* User.swift in Sources */,
 				4A7C430E294CE18E005FD411 /* UserResponse.swift in Sources */,
+				4A7C431C294D4533005FD411 /* UserDaily.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

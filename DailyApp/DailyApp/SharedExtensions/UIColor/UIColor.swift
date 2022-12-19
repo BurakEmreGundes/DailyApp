@@ -12,9 +12,10 @@ extension UIColor {
     static let baseGreen = UIColor(red: 56.0 / 255.0, green: 229.0 / 255.0, blue: 77.0 / 255.0, alpha: 1)
     static let baseYellow = UIColor(red: 250 / 255.0, green: 223 / 255.0, blue: 112 / 255.0, alpha: 1)
     static let baseGreenLight = UIColor(red: 56.0 / 255.0, green: 229.0 / 255.0, blue: 77.0 / 255.0, alpha: 0.8)
-
-    
-    
+    static let paleLilacTwo = UIColor(red: 227.0 / 255.0, green: 227.0 / 255.0, blue: 227.0 / 255.0, alpha: 1.0)
+    static let carlaBlueSky = UIColor(red: 98.0 / 255.0, green: 170.0 / 255.0, blue: 253.0 / 255.0, alpha: 1)
+    static let slateGrey = UIColor(red: 82 / 255.0, green: 82 / 255.0, blue: 102 / 255.0, alpha: 1.0)
+    static let lightGreyBlue = UIColor(red: 180 / 255.0, green: 180 / 255.0, blue: 194 / 255.0, alpha: 1.0)
     
     static func from(hex: Int) -> UIColor {
         let red = CGFloat((hex & 0xFF0000) >> 16)

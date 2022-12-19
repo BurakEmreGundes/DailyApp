@@ -73,5 +73,60 @@ struct RegisterUser : CodableReturningRequest, ErrorLoggableRequest{
     }
 }
 
+struct CreateDaily : CodableReturningRequest, ErrorLoggableRequest{
+    typealias ResponseType = Either<CreateDailyResponse, DASError>
+    
+    var dailyRequest : DailyRequest
+    
+    var data: RequestData {
+    let path = NetworkingConstants.PASURL + "api/v1/dailies"
+        return RequestData(path: path, method: .post, params: dailyRequest.asDictionary(), headers: NetworkingConstants.authHeader)
+    }
+}
+
+
+struct DeleteDaily : CodableReturningRequest, ErrorLoggableRequest{
+    typealias ResponseType = Either<DeleteDailyResponse, DASError>
+    
+    var daily : Daily
+    
+    var data: RequestData {
+        let path = NetworkingConstants.PASURL + "api/v1/dailies/" + daily._id
+        return RequestData(path: path, method: .delete, params: nil, headers: NetworkingConstants.authHeader)
+    }
+}
+
+
+struct GetUserDailies : CodableReturningRequest, ErrorLoggableRequest{
+    typealias ResponseType = Either<UserAllDailyResponse, DASError>
+    
+    var id : String
+    
+    var data: RequestData {
+        let path = NetworkingConstants.PASURL + "api/v1/userDailies/" + id
+        return RequestData(path: path, method: .get, params: nil, headers: NetworkingConstants.authHeader)
+    }
+}
+
+
+struct UpdateUserDaily :  CodableReturningRequest, ErrorLoggableRequest{
+    typealias ResponseType = Either<CreateDailyResponse, DASError>
+    
+    var id : String
+    
+    
+    struct Params: Codable {
+        let isCompleted : Bool
+    }
+    
+    let params: Params
+   
+    
+    var data: RequestData {
+        let path = NetworkingConstants.PASURL + "api/v1/dailies/" + id
+        return RequestData(path: path, method: .put, params: params.asDictionary(), headers: NetworkingConstants.authHeader)
+    }
+}
+
 
 

@@ -41,13 +41,13 @@ class DailyListTableViewCell: UITableViewCell, ClassNameGettable {
        
         switch type {
         case .dailyList:
-            self.checkButtonImage.isHidden = !isCheckout
+            self.checkButtonImage.setImage(UIImage(systemName: isCheckout ? "checkmark.circle.fill" : "circle"), for: .normal)
         case .extraDailyList:
             self.checkButtonImage.isHidden = true
         }
     }
     
     @IBAction func tappedCheck(_ sender: Any) {
-        checkButtonImage.isHidden = !checkButtonImage.isHidden
+        //checkButtonImage.isHidden = !checkButtonImage.isHidden
     }
 }

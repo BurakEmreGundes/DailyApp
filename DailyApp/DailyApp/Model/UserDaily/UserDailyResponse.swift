@@ -10,7 +10,14 @@ import Foundation
 
 struct UserDailyResponse : Codable {
     let success : Bool
-    let data : [Daily]
+    let data : UserDaily
+}
+
+
+struct UserAllDailyResponse : Codable {
+    let isFinished : Bool
+    let success : Bool
+    let data : UserDaily
 }
 
 
