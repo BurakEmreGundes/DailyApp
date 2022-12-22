@@ -15,6 +15,8 @@ class UserCustomDailyManager {
     
     var customDailies : [Daily] = []
     
+    var customDailiesForBase : [Daily] = []
+    
     var delegate: UserCustomDailyManagerDelegate?
             
     
@@ -26,6 +28,25 @@ class UserCustomDailyManager {
                 case .this(let success):
                     strongSelf.customDailies.append(success.data)
                     strongSelf.delegate?.setCustomDailies(customDailies: strongSelf.customDailies)
+                case .that(let error):
+                    print(error.error)
+                }
+               
+            } onError: { err in
+                print(err)
+            }
+        }
+    }
+    
+    func createCustomDailyForBaseDaily(dailyRequest : DailyRequest){
+        DispatchQueue.main.async {
+            CreateDaily(dailyRequest: DailyRequest(message: dailyRequest.message, isBase: dailyRequest.isBase)).execute { [weak self] response in
+                guard let strongSelf = self else {return}
+                switch response {
+                case .this(let success):
+                    strongSelf.customDailiesForBase.append(success.data)
+                   // strongSelf.delegate?.setCustomDailies(customDailies: strongSelf.customDailies)
+                    print("sea")
                 case .that(let error):
                     print(error.error)
                 }

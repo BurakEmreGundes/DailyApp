@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EzPopup
 
 class DailyListViewController: UIViewController {
     
@@ -20,7 +21,7 @@ class DailyListViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
+        
     private var tutorialCount : Int = 0
     
      
@@ -34,12 +35,21 @@ class DailyListViewController: UIViewController {
         }
         getDailies()
         configure()
+        
+        if !(User.current.userDidShowNextInfoPopuop) {
+            User.current.userDidShowNextInfoPopuop = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.showInfoPopup(with: "Dilersen sonraki sayfadan özgürce görev ekleyebilirsin. Önerdiğimiz görevleri seçmek zorunda değilsin.")
+            }
+        }
     }
     
     private lazy var mainTutorialView : MainTutorial = {
         let view = MainTutorial()
         view.delegate = self
         view.isUserInteractionEnabled = true
+        view.configure(image: UIImage(named: "tutorialImage1"), titleText: "Görev Seç", descText: "Görev seç bölümünden kendine uygun olan görevleri seç ve serüvene başla!", tutorialCount: 0)
         return view
     }()
     
@@ -91,6 +101,28 @@ class DailyListViewController: UIViewController {
     
     private func configureLayoutAttributes(){
         finishSelectButton.layer.cornerRadius = 12.0
+    }
+    
+    
+    private func showPopup(viewController: UIViewController) {
+        let popupVC = PopupViewController(contentController: viewController,
+                                          position: .center(nil),
+                                          popupWidth: (view.frame.width * 0.83),
+                                          popupHeight: nil)
+        popupVC.shadowEnabled = false
+        present(popupVC, animated: true, completion: nil)
+    }
+    
+    private func showInfoPopup(with text: String){
+        let requestClosure: (AlertPopupViewController?) -> Void = { [weak self] (_) in
+           self?.dismiss(animated: true,
+                          completion: nil)
+        }
+        let alertVC = AlertPopupViewController.popup(headTitle: "Bilgilendirme",text: text,
+                                                     image: UIImage(named: "iconNext"), cornerRadius: 12,
+                                                     imageHeight: 60,
+                                                     action: requestClosure)
+        showPopup(viewController: alertVC)
     }
     
     
@@ -149,14 +181,22 @@ extension DailyListViewController : BottomSheetDelegate {
 
 extension DailyListViewController : MainTutorialViewDelegate {
     func tappedNext() {
-        mainTutorialView.configure(image: UIImage(named: "tutorialImage1.1"), titleText: "deneme", descText: "deneme", tutorialCount: tutorialCount)
+        
+        let tutorialImageList = ["tutorialImage1","tutorialImage2","tutorialImage3"]
+        let tutorialTitle = ["Görev Seç", "Özgürce Görev Ekle", "Puanları Topla"]
+        let tutorialDescList = ["Görev seç bölümünden kendine uygun olan görevleri seç ve serüvene başla!", "Görev ekle bölümünden dilediğin görevi ekleyebilirsin. Haftayı tamamlayabileceğin görevleri bul. Unutma bitirebileceğin kadar eklemek sana daha çok puan kazandırır."
+        ,"Ne kadar çok görev yaparsan o kadar çok puan kazanır skorunu yükseltirsin. Sıradışı bir kapışma için tamamladığın görevlere tik atmayı unutma. Hazırsan haydi başlayalım ;)"]
+        
         if tutorialCount < 2{
             tutorialCount += 1
             self.dismiss(animated: true)
             self.showTutorial(contentView: mainTutorialView)
         }else{
+            
             self.dismiss(animated: true)
         }
+        
+        mainTutorialView.configure(image: UIImage(named: tutorialImageList[tutorialCount]), titleText: tutorialTitle[tutorialCount], descText: tutorialDescList[tutorialCount], tutorialCount: tutorialCount)
     }
     
     func tappedSkip() {

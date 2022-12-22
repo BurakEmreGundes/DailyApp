@@ -25,8 +25,8 @@ struct NetworkingConstants {
     static let eventsUrl = "https://akzhdplyec.execute-api.eu-west-1.amazonaws.com/default/event-producer-prod"
     #endif*/
     
-    static let PASURL = "http://localhost:5050/"
-
+    //static let PASURL = "http://localhost:5050/"
+  static let PASURL = "https://evimdekibitki.com/app/"
     
     static var authHeader: [String : String]? {
         let authHeader = ["Authorization": "Bearer",

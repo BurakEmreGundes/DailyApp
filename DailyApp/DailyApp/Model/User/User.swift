@@ -48,6 +48,15 @@ class User:Codable {
             UserDefaults.standard.set(newValue, forKey: "userDidShowTutorialPage")
         }
     }
+    
+    var userDidShowNextInfoPopuop : Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "userDidShowNextInfoPopuop")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userDidShowNextInfoPopuop")
+        }
+    }
 
     
 

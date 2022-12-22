@@ -47,7 +47,6 @@ class DailyListTableViewCell: UITableViewCell, ClassNameGettable {
         }
     }
     
-    @IBAction func tappedCheck(_ sender: Any) {
-        //checkButtonImage.isHidden = !checkButtonImage.isHidden
+    @IBAction func tappedCheck(_ sender: Any) {        
     }
 }

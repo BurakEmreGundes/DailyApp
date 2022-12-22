@@ -11,6 +11,8 @@ class DayView: UIView {
     
     var dayLevel : Int = 0
     
+    var isEligible : Bool = true
+    
     var delegate : DayViewDelegate?
     
     private lazy var containerView : UIView = {

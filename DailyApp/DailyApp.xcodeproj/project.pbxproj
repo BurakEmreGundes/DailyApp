@@ -33,6 +33,7 @@
 		4A7A5E072950C7FA00C3B63C /* CarlaIBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E062950C7FA00C3B63C /* CarlaIBView.swift */; };
 		4A7A5E0A2951073600C3B63C /* AlertPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E092951073600C3B63C /* AlertPopupViewController.swift */; };
 		4A7A5E0D29510BC800C3B63C /* AlertPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */; };
+		4A7A5E102951345B00C3B63C /* ScoreCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A5E0F2951345B00C3B63C /* ScoreCircularView.swift */; };
 		4A7C42F0294B2457005FD411 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C42EF294B2457005FD411 /* AlertManager.swift */; };
 		4A7C42F2294B3911005FD411 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C42F1294B3911005FD411 /* Home.storyboard */; };
 		4A7C42F5294B3CE2005FD411 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C42F4294B3CE1005FD411 /* HomeViewController.swift */; };
@@ -84,6 +85,7 @@
 		4A7A5E062950C7FA00C3B63C /* CarlaIBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarlaIBView.swift; sourceTree = "<group>"; };
 		4A7A5E092951073600C3B63C /* AlertPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPopupViewController.swift; sourceTree = "<group>"; };
 		4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertPopupViewController.xib; sourceTree = "<group>"; };
+		4A7A5E0F2951345B00C3B63C /* ScoreCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCircularView.swift; sourceTree = "<group>"; };
 		4A7C42EF294B2457005FD411 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		4A7C42F1294B3911005FD411 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4A7C42F4294B3CE1005FD411 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		4A32D73F2949BB900074D847 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A7A5E0E2951344200C3B63C /* ScoreCircularView */,
 				4A7A5E042950C7E200C3B63C /* General */,
 				4A78B70E2950BD03003315E9 /* MainTutorial */,
 				4A7C431D294E08DD005FD411 /* Home */,
@@ -351,6 +354,14 @@
 				4A7A5E0C29510BC800C3B63C /* AlertPopupViewController.xib */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		4A7A5E0E2951344200C3B63C /* ScoreCircularView */ = {
+			isa = PBXGroup;
+			children = (
+				4A7A5E0F2951345B00C3B63C /* ScoreCircularView.swift */,
+			);
+			path = ScoreCircularView;
 			sourceTree = "<group>";
 		};
 		4A7C42EE294B2443005FD411 /* Singleton */ = {
@@ -584,6 +595,7 @@
 				4A7C42FA294C88C7005FD411 /* Reachability.swift in Sources */,
 				4A78B70D2950B9D1003315E9 /* BottomSheetController.swift in Sources */,
 				4A32D7642949E70A0074D847 /* ExtraDailyViewController.swift in Sources */,
+				4A7A5E102951345B00C3B63C /* ScoreCircularView.swift in Sources */,
 				4A32D7672949E7FA0074D847 /* UINavigationController.swift in Sources */,
 				4A7C4309294C89CB005FD411 /* Either.swift in Sources */,
 				4A78B703294E30AB003315E9 /* HomeTableViewCell.swift in Sources */,
@@ -694,6 +706,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Task Challenge";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -747,6 +760,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Task Challenge";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -766,23 +780,27 @@
 				DEVELOPMENT_TEAM = GGBN9Z4A4W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DailyApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Task Challenge";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.burakemregundes.DailyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burakemregundes.TaskChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -798,23 +816,27 @@
 				DEVELOPMENT_TEAM = GGBN9Z4A4W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DailyApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Task Challenge";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.burakemregundes.DailyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burakemregundes.TaskChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

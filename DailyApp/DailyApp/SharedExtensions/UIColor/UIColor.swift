@@ -16,6 +16,7 @@ extension UIColor {
     static let carlaBlueSky = UIColor(red: 98.0 / 255.0, green: 170.0 / 255.0, blue: 253.0 / 255.0, alpha: 1)
     static let slateGrey = UIColor(red: 82 / 255.0, green: 82 / 255.0, blue: 102 / 255.0, alpha: 1.0)
     static let lightGreyBlue = UIColor(red: 180 / 255.0, green: 180 / 255.0, blue: 194 / 255.0, alpha: 1.0)
+    static let crystalBlue = UIColor(red: 98 / 255.0, green: 170 / 255.0, blue: 253 / 255.0, alpha: 1.0)
     
     static func from(hex: Int) -> UIColor {
         let red = CGFloat((hex & 0xFF0000) >> 16)

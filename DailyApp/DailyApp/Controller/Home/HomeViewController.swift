@@ -32,6 +32,8 @@ class HomeViewController: UIViewController {
     
     private var currentDayLevel : Int = 0
     
+    private var diffDay : Int = 0
+    
     private lazy var containerView : UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -84,12 +86,20 @@ class HomeViewController: UIViewController {
         return view
     }()
     
+    private lazy var scoreCircularView : ScoreCircularView = {
+        let view = ScoreCircularView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.radius = 35
+        return view
+    }()
+    
     private lazy var scoreLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Toplam Skorun : 892p"
+        label.text = "Toplam Skorun : 8000p"
         label.textColor = .label
-        label.font = .systemFont(ofSize: 18.0, weight: .bold)
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 19.0, weight: .bold)
         return label
     }()
     
@@ -189,6 +199,17 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
+    private func configureDayLevelEligibility(){
+        dayStackView.arrangedSubviews.forEach { view in
+            if let view = view as? DayView {
+                if view.dayLevel <= diffDay{
+                    view.setColor(color: .red, textColor : .white, borderColor : .white)
+                    view.isEligible = false
+                }
+            }
+        }
+    }
+    
     private func refreshUserDaily(){
         
         User.current.userDailyId = nil
@@ -228,6 +249,18 @@ class HomeViewController: UIViewController {
         showRefreshPopup(with: "7 günlük süren sıfırlanacak. Yeni bir düete çıkmak istediğine emin misin? Hadi bakalım, göster kendini :).")
     }
     
+    private func setUserScore(dailies : [Daily]){
+        let completedDailies = dailies.filter({ $0.isCompleted })
+        
+        if completedDailies.count > 0, dailies.count > 0{
+            scoreLabel.text = "Toplam Puan: \(Int(((Double(completedDailies.count) / Double(dailies.count))*100))*100)"
+            scoreCircularView.configureView(progressInfoNumber: Double(completedDailies.count) / Double(dailies.count), progressImage: "", endNode: false)
+        }else{
+            scoreLabel.text = "Toplam Puan: \(0)"
+            scoreCircularView.configureView(progressInfoNumber: 0.0, progressImage: "", endNode: false)
+        }
+    }
+    
     private func getAllUserDailies(){
         guard let userDailyId = User.current.userDailyId else {
             refreshUserDaily()
@@ -240,7 +273,11 @@ class HomeViewController: UIViewController {
                 if success.isFinished{
                     strongSelf.showRefreshPopup(with: "7 günlük süren sıfırlandı. Yeni bir yola çıkıyoruz! Hadi bakalım, göster kendini :).")
                 }else{
+                    strongSelf.diffDay = success.diffDay
+                    strongSelf.configureDayCount(diffDay: success.diffDay)
                     strongSelf.dailyList = success.data.dailies
+                    strongSelf.setUserScore(dailies: success.data.dailies)
+                    strongSelf.configureDayLevelEligibility()
                 }
                
             case .that(let error):
@@ -270,15 +307,23 @@ class HomeViewController: UIViewController {
     }
     
     
-    private func configureDayCount(){
-        dayView.tapped()
+    private func configureDayCount(diffDay : Int){
+        dayStackView.arrangedSubviews.forEach { view in
+            if let view = view as? DayView{
+                if view.dayLevel == diffDay + 1{
+                    view.tapped()
+                    return
+                }
+            }
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllUserDailies()
         configure()
-        configureDayCount()
+        //configureDayCount()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -301,6 +346,7 @@ class HomeViewController: UIViewController {
         //scrollView.addSubview(mainView)
         mainView.addSubview(mainStackView)
         scoreView.addSubview(scoreLabel)
+        scoreView.addSubview(scoreCircularView)
         
         daysContainerView.addSubview(dayStackView)
         
@@ -325,11 +371,18 @@ class HomeViewController: UIViewController {
             mainStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -16),
             mainStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -16),
             
-            scoreView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.1),
+            scoreView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.13),
             
             scoreLabel.leadingAnchor.constraint(equalTo: scoreView.leadingAnchor,constant: 16),
-            scoreLabel.trailingAnchor.constraint(equalTo: scoreView.trailingAnchor,constant: -16),
+            scoreLabel.trailingAnchor.constraint(equalTo: scoreView.trailingAnchor,constant: -96),
             scoreLabel.centerYAnchor.constraint(equalTo: scoreView.centerYAnchor),
+            
+            
+            scoreCircularView.trailingAnchor.constraint(equalTo: scoreView.trailingAnchor, constant: -48),
+            //scoreCircularView.trailingAnchor.constraint(equalTo: scoreView.trailingAnchor),
+            scoreCircularView.centerYAnchor.constraint(equalTo: scoreView.centerYAnchor),
+            
+            
             
             dayStackView.topAnchor.constraint(equalTo: daysContainerView.topAnchor),
             dayStackView.leadingAnchor.constraint(equalTo: daysContainerView.leadingAnchor),
@@ -389,7 +442,7 @@ class HomeViewController: UIViewController {
         }
         
         if !(tableViewDatas.count > 0){
-            tableViewDatas = listForDay[0].dailies
+            tableViewDatas = listForDay[diffDay].dailies
         }else{
             tableViewDatas = listForDay[currentDayLevel - 1].dailies
         }
@@ -421,11 +474,17 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if currentDayLevel <= diffDay {
+            return
+        }
+        
+        
         dailyList.map {
             if $0._id == tableViewDatas[indexPath.row]._id{
                 $0.isCompleted = !$0.isCompleted
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.setUserScore(dailies: self.dailyList)
                 }
             }
         }
@@ -440,6 +499,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
 
 extension HomeViewController : DayViewDelegate {
     func tapped(dayLevel: Int) {
+
         self.currentDayLevel = dayLevel
         dayStackView.arrangedSubviews.forEach { view in
             if let view = view as? DayView {
@@ -451,12 +511,14 @@ extension HomeViewController : DayViewDelegate {
                     }
                    
                 }
-                
-                if view.dayLevel == dayLevel {
-                    view.setColor(color: .carlaBlueSky, textColor : .white, borderColor : .white)
-                }else{
-                    view.setColor(color: .clear, textColor : .label, borderColor : .label)
+                if view.isEligible{
+                    if view.dayLevel == dayLevel {
+                        view.setColor(color: .carlaBlueSky, textColor : .white, borderColor : .white)
+                    }else{
+                        view.setColor(color: .clear, textColor : .label, borderColor : .label)
+                    }
                 }
+ 
             }
         }
         
