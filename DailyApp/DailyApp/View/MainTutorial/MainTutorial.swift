@@ -38,7 +38,7 @@ class MainTutorial: UIView, CarlaIBView {
         self.titleText.text = titleText
         self.subtitleText.text = descText
         
-        if tutorialCount == 1 {
+        if tutorialCount == 2 {
             nextButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
         }
         

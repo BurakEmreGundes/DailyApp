@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,14 +40,14 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tüm görevleriniz için tek bir yer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sf-Fu-Pjc">
-                    <rect key="frame" x="16" y="294" width="409" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="32" y="294" width="409" height="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kişisel veya iş ile ilgili tğm görevlerinizi tek bir yerde toplayıp düzenleyerek gününüzü verimli bir şekilde planlayın" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUg-Ul-Qn3">
-                    <rect key="frame" x="16" y="327" width="409" height="61"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="32" y="329" width="409" height="64.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -62,10 +62,10 @@
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBW-WO-iqX">
-                            <rect key="frame" x="387" y="18" width="30" height="30"/>
+                            <rect key="frame" x="377" y="18" width="40" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="WjN-Of-E0Z"/>
-                                <constraint firstAttribute="width" constant="30" id="pND-0O-pD8"/>
+                                <constraint firstAttribute="height" constant="40" id="WjN-Of-E0Z"/>
+                                <constraint firstAttribute="width" constant="40" id="pND-0O-pD8"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" title=""/>
@@ -101,10 +101,10 @@
                 <constraint firstItem="XUg-Ul-Qn3" firstAttribute="leading" secondItem="7sf-Fu-Pjc" secondAttribute="leading" id="3dg-6B-yIZ"/>
                 <constraint firstItem="O8s-Ry-FvL" firstAttribute="height" secondItem="rWf-kw-VYB" secondAttribute="height" multiplier="0.2" id="7zU-Aw-Ywo"/>
                 <constraint firstItem="6y9-41-8Hw" firstAttribute="centerX" secondItem="rWf-kw-VYB" secondAttribute="centerX" id="DK2-QC-p76"/>
-                <constraint firstItem="7sf-Fu-Pjc" firstAttribute="leading" secondItem="egS-YJ-6zN" secondAttribute="leading" id="S1F-fm-Fly"/>
+                <constraint firstItem="7sf-Fu-Pjc" firstAttribute="leading" secondItem="egS-YJ-6zN" secondAttribute="leading" constant="16" id="S1F-fm-Fly"/>
                 <constraint firstAttribute="bottom" secondItem="O8s-Ry-FvL" secondAttribute="bottom" id="WgD-eW-Xhj"/>
                 <constraint firstItem="rWf-kw-VYB" firstAttribute="trailing" secondItem="egS-YJ-6zN" secondAttribute="trailing" constant="16" id="YIJ-c7-F9Q"/>
-                <constraint firstItem="7sf-Fu-Pjc" firstAttribute="trailing" secondItem="egS-YJ-6zN" secondAttribute="trailing" id="bj2-KG-N1L"/>
+                <constraint firstItem="7sf-Fu-Pjc" firstAttribute="trailing" secondItem="egS-YJ-6zN" secondAttribute="trailing" constant="16" id="bj2-KG-N1L"/>
                 <constraint firstItem="6y9-41-8Hw" firstAttribute="top" secondItem="Ag9-AL-gXt" secondAttribute="top" constant="6" id="db3-Ag-XLB"/>
                 <constraint firstItem="7sf-Fu-Pjc" firstAttribute="top" secondItem="egS-YJ-6zN" secondAttribute="bottom" constant="24" id="i06-eu-pTP"/>
                 <constraint firstItem="O8s-Ry-FvL" firstAttribute="leading" secondItem="rWf-kw-VYB" secondAttribute="leading" id="mWs-TJ-vy9"/>
