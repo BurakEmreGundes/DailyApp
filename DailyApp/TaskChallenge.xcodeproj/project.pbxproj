@@ -57,7 +57,7 @@
 
 /* Begin PBXFileReference section */
 		434CD87663BEAE0151E84159 /* libPods-DailyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DailyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A32D7272949B3AC0074D847 /* DailyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A32D7272949B3AC0074D847 /* TaskChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A32D72A2949B3AC0074D847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A32D72C2949B3AC0074D847 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4A32D72E2949B3AC0074D847 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		4A32D7282949B3AC0074D847 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A32D7272949B3AC0074D847 /* DailyApp.app */,
+				4A32D7272949B3AC0074D847 /* TaskChallenge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -491,9 +491,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A32D7262949B3AC0074D847 /* DailyApp */ = {
+		4A32D7262949B3AC0074D847 /* TaskChallenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A32D73B2949B3AE0074D847 /* Build configuration list for PBXNativeTarget "DailyApp" */;
+			buildConfigurationList = 4A32D73B2949B3AE0074D847 /* Build configuration list for PBXNativeTarget "TaskChallenge" */;
 			buildPhases = (
 				EC008368DC00C687C95E6C03 /* [CP] Check Pods Manifest.lock */,
 				4A32D7232949B3AC0074D847 /* Sources */,
@@ -504,9 +504,9 @@
 			);
 			dependencies = (
 			);
-			name = DailyApp;
+			name = TaskChallenge;
 			productName = DailyApp;
-			productReference = 4A32D7272949B3AC0074D847 /* DailyApp.app */;
+			productReference = 4A32D7272949B3AC0074D847 /* TaskChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -524,7 +524,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4A32D7222949B3AC0074D847 /* Build configuration list for PBXProject "DailyApp" */;
+			buildConfigurationList = 4A32D7222949B3AC0074D847 /* Build configuration list for PBXProject "TaskChallenge" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -537,7 +537,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A32D7262949B3AC0074D847 /* DailyApp */,
+				4A32D7262949B3AC0074D847 /* TaskChallenge */,
 			);
 		};
 /* End PBXProject section */
@@ -780,7 +780,8 @@
 				DEVELOPMENT_TEAM = GGBN9Z4A4W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DailyApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Task Challenge";
+				INFOPLIST_KEY_CFBundleDisplayName = TaskChallenge;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -816,7 +817,8 @@
 				DEVELOPMENT_TEAM = GGBN9Z4A4W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DailyApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Task Challenge";
+				INFOPLIST_KEY_CFBundleDisplayName = TaskChallenge;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -843,7 +845,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A32D7222949B3AC0074D847 /* Build configuration list for PBXProject "DailyApp" */ = {
+		4A32D7222949B3AC0074D847 /* Build configuration list for PBXProject "TaskChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A32D7392949B3AE0074D847 /* Debug */,
@@ -852,7 +854,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A32D73B2949B3AE0074D847 /* Build configuration list for PBXNativeTarget "DailyApp" */ = {
+		4A32D73B2949B3AE0074D847 /* Build configuration list for PBXNativeTarget "TaskChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A32D73C2949B3AE0074D847 /* Debug */,

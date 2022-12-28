@@ -31,7 +31,7 @@ extension CarlaIBView {
     
     var nibName: String {
         let baseStr = String(reflecting: type(of: self))
-        return baseStr.replacingOccurrences(of: "DailyApp.", with: "")
+        return baseStr.replacingOccurrences(of: "TaskChallenge.", with: "")
     }
     
     func postInit() { }

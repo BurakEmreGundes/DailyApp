@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:DailyApp.xcodeproj">
+      location = "group:/Users/burakemregundes/Desktop/DailyApp/DailyApp/TaskChallenge.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
